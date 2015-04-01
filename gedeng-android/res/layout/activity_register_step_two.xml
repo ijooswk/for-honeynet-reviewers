@@ -1,0 +1,60 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_margin="40dp"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/editText_veriCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/signup_input_vericode"
+        android:padding="10dp"
+        android:textSize="18sp"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/editText_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="@string/signup_set_password"
+        android:inputType="textPassword"
+        android:padding="10dp"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:id="@+id/layout_agreeProtocol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp" >
+
+        <CheckBox
+            android:id="@+id/checkBox_agreeProtocol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/register_agree"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textView_protocol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/register_protocal"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button_nextStep"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/button_bg_selector"
+        android:text="@string/signup_next_step"
+        android:textColor="@android:color/white" />
+
+</LinearLayout>

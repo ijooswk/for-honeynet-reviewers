@@ -1,0 +1,866 @@
+android/app/Activity onActivityResult
+....   protected void onActivityResult(int, int, android.content.Intent);
+
+android/app/Activity onAttachFragment
+....   public void onAttachFragment(android.app.Fragment);
+
+android/app/Activity onBackPressed
+....   public void onBackPressed();
+
+android/app/Activity onCreateDialog
+....   protected android.app.Dialog onCreateDialog(int);
+
+....   protected android.app.Dialog onCreateDialog(int, android.os.Bundle);
+
+android/app/Activity onCreateOptionsMenu
+....   public boolean onCreateOptionsMenu(android.view.Menu);
+
+android/app/Activity onKeyDown
+....   public boolean onKeyDown(int, android.view.KeyEvent);
+
+android/app/Activity onRetainNonConfigurationInstance
+....   public java.lang.Object onRetainNonConfigurationInstance();
+
+android/app/Activity setTitle
+....   public void setTitle(java.lang.CharSequence);
+
+....   public void setTitle(int);
+
+android/app/Activity startActivityFromFragment
+....   public void startActivityFromFragment(android.app.Fragment, android.content.Intent, int);
+
+....   public void startActivityFromFragment(android.app.Fragment, android.content.Intent, int, android.os.Bundle);
+
+android/app/Dialog onKeyDown
+....   public boolean onKeyDown(int, android.view.KeyEvent);
+
+android/app/Dialog setTitle
+....   public void setTitle(java.lang.CharSequence);
+
+....   public void setTitle(int);
+
+android/app/IntentService onBind
+....   public android.os.IBinder onBind(android.content.Intent);
+
+android/app/IntentService onHandleIntent
+....   protected abstract void onHandleIntent(android.content.Intent);
+
+android/app/ListActivity onListItemClick
+....   protected void onListItemClick(android.widget.ListView, android.view.View, int, long);
+
+android/app/Service onBind
+....   public abstract android.os.IBinder onBind(android.content.Intent);
+
+android/app/Service onStartCommand
+....   public int onStartCommand(android.content.Intent, int, int);
+
+android/app/admin/DeviceAdminReceiver onDisableRequested
+....   public java.lang.CharSequence onDisableRequested(android.content.Context, android.content.Intent);
+
+android/app/admin/DeviceAdminReceiver onDisabled
+....   public void onDisabled(android.content.Context, android.content.Intent);
+
+android/app/admin/DeviceAdminReceiver onEnabled
+....   public void onEnabled(android.content.Context, android.content.Intent);
+
+android/app/admin/DeviceAdminReceiver onPasswordChanged
+....   public void onPasswordChanged(android.content.Context, android.content.Intent);
+
+android/app/admin/DeviceAdminReceiver onPasswordFailed
+....   public void onPasswordFailed(android.content.Context, android.content.Intent);
+
+android/app/admin/DeviceAdminReceiver onPasswordSucceeded
+....   public void onPasswordSucceeded(android.content.Context, android.content.Intent);
+
+android/appwidget/AppWidgetProvider onDeleted
+....   public void onDeleted(android.content.Context, int[]);
+
+android/appwidget/AppWidgetProvider onDisabled
+....   public void onDisabled(android.content.Context);
+
+android/appwidget/AppWidgetProvider onEnabled
+....   public void onEnabled(android.content.Context);
+
+android/appwidget/AppWidgetProvider onUpdate
+....   public void onUpdate(android.content.Context, android.appwidget.AppWidgetManager, int[]);
+
+android/content/BroadcastReceiver onReceive
+....   public abstract void onReceive(android.content.Context, android.content.Intent);
+
+android/content/ContentProvider applyBatch
+....   public android.content.ContentProviderResult[] applyBatch(java.util.ArrayList<android.content.ContentProviderOperation>) throws android.content.OperationApplicationException;
+
+android/content/ContentProvider bulkInsert
+....   public int bulkInsert(android.net.Uri, android.content.ContentValues[]);
+
+android/content/ContentProvider delete
+....   public abstract int delete(android.net.Uri, java.lang.String, java.lang.String[]);
+
+android/content/ContentProvider getType
+....   public abstract java.lang.String getType(android.net.Uri);
+
+android/content/ContentProvider insert
+....   public abstract android.net.Uri insert(android.net.Uri, android.content.ContentValues);
+
+android/content/ContentProvider onCreate
+....   public abstract boolean onCreate();
+
+android/content/ContentProvider openAssetFile
+....   public android.content.res.AssetFileDescriptor openAssetFile(android.net.Uri, java.lang.String) throws java.io.FileNotFoundException;
+
+....   public android.content.res.AssetFileDescriptor openAssetFile(android.net.Uri, java.lang.String, android.os.CancellationSignal) throws java.io.FileNotFoundException;
+
+android/content/ContentProvider openFile
+....   public android.os.ParcelFileDescriptor openFile(android.net.Uri, java.lang.String) throws java.io.FileNotFoundException;
+
+....   public android.os.ParcelFileDescriptor openFile(android.net.Uri, java.lang.String, android.os.CancellationSignal) throws java.io.FileNotFoundException;
+
+android/content/ContentProvider query
+....   public abstract android.database.Cursor query(android.net.Uri, java.lang.String[], java.lang.String, java.lang.String[], java.lang.String);
+
+....   public android.database.Cursor query(android.net.Uri, java.lang.String[], java.lang.String, java.lang.String[], java.lang.String, android.os.CancellationSignal);
+
+android/content/ContentProvider update
+....   public abstract int update(android.net.Uri, android.content.ContentValues, java.lang.String, java.lang.String[]);
+
+android/content/ContextWrapper getAssets
+....   public android.content.res.AssetManager getAssets();
+
+android/content/ContextWrapper getTheme
+....   public android.content.res.Resources$Theme getTheme();
+
+android/database/AbstractCursor getColumnNames
+....   public abstract java.lang.String[] getColumnNames();
+
+android/database/AbstractCursor getCount
+....   public abstract int getCount();
+
+android/database/AbstractCursor getDouble
+....   public abstract double getDouble(int);
+
+android/database/AbstractCursor getFloat
+....   public abstract float getFloat(int);
+
+android/database/AbstractCursor getInt
+....   public abstract int getInt(int);
+
+android/database/AbstractCursor getLong
+....   public abstract long getLong(int);
+
+android/database/AbstractCursor getShort
+....   public abstract short getShort(int);
+
+android/database/AbstractCursor getString
+....   public abstract java.lang.String getString(int);
+
+android/database/AbstractCursor isNull
+....   public abstract boolean isNull(int);
+
+android/database/ContentObserver deliverSelfNotifications
+....   public boolean deliverSelfNotifications();
+
+android/database/ContentObserver onChange
+....   public void onChange(boolean);
+
+....   public void onChange(boolean, android.net.Uri);
+
+android/database/DataSetObserver onChanged
+....   public void onChanged();
+
+android/database/DataSetObserver onInvalidated
+....   public void onInvalidated();
+
+android/database/sqlite/SQLiteOpenHelper onCreate
+....   public abstract void onCreate(android.database.sqlite.SQLiteDatabase);
+
+android/database/sqlite/SQLiteOpenHelper onDowngrade
+....   public void onDowngrade(android.database.sqlite.SQLiteDatabase, int, int);
+
+android/database/sqlite/SQLiteOpenHelper onOpen
+....   public void onOpen(android.database.sqlite.SQLiteDatabase);
+
+android/database/sqlite/SQLiteOpenHelper onUpgrade
+....   public abstract void onUpgrade(android.database.sqlite.SQLiteDatabase, int, int);
+
+android/graphics/drawable/Drawable getOpacity
+....   public abstract int getOpacity();
+
+android/graphics/drawable/Drawable onBoundsChange
+....   protected void onBoundsChange(android.graphics.Rect);
+
+android/graphics/drawable/Drawable onLevelChange
+....   protected boolean onLevelChange(int);
+
+android/os/AsyncTask doInBackground
+....   protected abstract Result doInBackground(Params...);
+
+android/os/AsyncTask onCancelled
+....   protected void onCancelled(Result);
+
+....   protected void onCancelled();
+
+android/os/AsyncTask onPostExecute
+....   protected void onPostExecute(Result);
+
+android/os/AsyncTask onPreExecute
+....   protected void onPreExecute();
+
+android/os/AsyncTask onProgressUpdate
+....   protected void onProgressUpdate(Progress...);
+
+android/os/CountDownTimer onFinish
+....   public abstract void onFinish();
+
+android/os/CountDownTimer onTick
+....   public abstract void onTick(long);
+
+android/os/FileObserver onEvent
+....   public abstract void onEvent(int, java.lang.String);
+
+android/os/FileObserver startWatching
+....   public void startWatching();
+
+android/os/FileObserver stopWatching
+....   public void stopWatching();
+
+android/os/Handler dispatchMessage
+....   public void dispatchMessage(android.os.Message);
+
+android/os/Handler handleMessage
+....   public void handleMessage(android.os.Message);
+
+android/os/HandlerThread onLooperPrepared
+....   protected void onLooperPrepared();
+
+android/os/ResultReceiver onReceiveResult
+....   protected void onReceiveResult(int, android.os.Bundle);
+
+android/telephony/PhoneStateListener onCallStateChanged
+....   public void onCallStateChanged(int, java.lang.String);
+
+android/telephony/PhoneStateListener onCellLocationChanged
+....   public void onCellLocationChanged(android.telephony.CellLocation);
+
+android/telephony/PhoneStateListener onDataConnectionStateChanged
+....   public void onDataConnectionStateChanged(int);
+
+....   public void onDataConnectionStateChanged(int, int);
+
+android/telephony/PhoneStateListener onServiceStateChanged
+....   public void onServiceStateChanged(android.telephony.ServiceState);
+
+android/telephony/PhoneStateListener onSignalStrengthChanged
+....   public void onSignalStrengthChanged(int);
+
+android/text/method/NumberKeyListener getAcceptedChars
+....   protected abstract char[] getAcceptedChars();
+
+android/text/style/ClickableSpan onClick
+....   public abstract void onClick(android.view.View);
+
+android/text/style/ClickableSpan updateDrawState
+....   public void updateDrawState(android.text.TextPaint);
+
+android/view/OrientationEventListener onOrientationChanged
+....   public abstract void onOrientationChanged(int);
+
+android/view/View onCreateInputConnection
+....   public android.view.inputmethod.InputConnection onCreateInputConnection(android.view.inputmethod.EditorInfo);
+
+android/view/View onDraw
+....   protected void onDraw(android.graphics.Canvas);
+
+android/view/View onLayout
+....   protected void onLayout(boolean, int, int, int, int);
+
+android/view/View onMeasure
+....   protected void onMeasure(int, int);
+
+android/view/View onSizeChanged
+....   protected void onSizeChanged(int, int, int, int);
+
+android/view/View onTouchEvent
+....   public boolean onTouchEvent(android.view.MotionEvent);
+
+android/view/ViewGroup addFocusables
+....   public void addFocusables(java.util.ArrayList<android.view.View>, int, int);
+
+android/view/ViewGroup addTouchables
+....   public void addTouchables(java.util.ArrayList<android.view.View>);
+
+android/view/ViewGroup dispatchDraw
+....   protected void dispatchDraw(android.graphics.Canvas);
+
+android/view/ViewGroup generateDefaultLayoutParams
+....   protected android.view.ViewGroup$LayoutParams generateDefaultLayoutParams();
+
+android/view/ViewGroup generateLayoutParams
+....   public android.view.ViewGroup$LayoutParams generateLayoutParams(android.util.AttributeSet);
+
+....   protected android.view.ViewGroup$LayoutParams generateLayoutParams(android.view.ViewGroup$LayoutParams);
+
+android/view/ViewGroup getChildDrawingOrder
+....   protected int getChildDrawingOrder(int, int);
+
+android/view/ViewGroup onDetachedFromWindow
+....   protected void onDetachedFromWindow();
+
+android/view/ViewGroup onInterceptTouchEvent
+....   public boolean onInterceptTouchEvent(android.view.MotionEvent);
+
+android/view/ViewGroup onLayout
+....   protected abstract void onLayout(boolean, int, int, int, int);
+
+android/view/ViewGroup onRequestFocusInDescendants
+....   protected boolean onRequestFocusInDescendants(int, android.graphics.Rect);
+
+android/view/accessibility/AccessibilityNodeProvider createAccessibilityNodeInfo
+....   public android.view.accessibility.AccessibilityNodeInfo createAccessibilityNodeInfo(int);
+
+android/view/accessibility/AccessibilityNodeProvider findAccessibilityNodeInfosByText
+....   public java.util.List<android.view.accessibility.AccessibilityNodeInfo> findAccessibilityNodeInfosByText(java.lang.String, int);
+
+android/view/accessibility/AccessibilityNodeProvider performAction
+....   public boolean performAction(int, int, android.os.Bundle);
+
+android/view/animation/Animation applyTransformation
+....   protected void applyTransformation(float, android.view.animation.Transformation);
+
+android/view/animation/BounceInterpolator getInterpolation
+....   public float getInterpolation(float);
+
+android/view/inputmethod/BaseInputConnection getEditable
+....   public android.text.Editable getEditable();
+
+android/webkit/WebChromeClient onConsoleMessage
+....   public void onConsoleMessage(java.lang.String, int, java.lang.String);
+
+....   public boolean onConsoleMessage(android.webkit.ConsoleMessage);
+
+android/webkit/WebChromeClient onExceededDatabaseQuota
+....   public void onExceededDatabaseQuota(java.lang.String, java.lang.String, long, long, long, android.webkit.WebStorage$QuotaUpdater);
+
+android/webkit/WebChromeClient onJsAlert
+....   public boolean onJsAlert(android.webkit.WebView, java.lang.String, java.lang.String, android.webkit.JsResult);
+
+android/webkit/WebChromeClient onJsConfirm
+....   public boolean onJsConfirm(android.webkit.WebView, java.lang.String, java.lang.String, android.webkit.JsResult);
+
+android/webkit/WebChromeClient onJsPrompt
+....   public boolean onJsPrompt(android.webkit.WebView, java.lang.String, java.lang.String, java.lang.String, android.webkit.JsPromptResult);
+
+android/webkit/WebChromeClient onProgressChanged
+....   public void onProgressChanged(android.webkit.WebView, int);
+
+android/webkit/WebChromeClient onReachedMaxAppCacheSize
+....   public void onReachedMaxAppCacheSize(long, long, android.webkit.WebStorage$QuotaUpdater);
+
+android/webkit/WebChromeClient onReceivedTitle
+....   public void onReceivedTitle(android.webkit.WebView, java.lang.String);
+
+android/webkit/WebView addJavascriptInterface
+....   public void addJavascriptInterface(java.lang.Object, java.lang.String);
+
+android/webkit/WebViewClient onFormResubmission
+....   public void onFormResubmission(android.webkit.WebView, android.os.Message, android.os.Message);
+
+android/webkit/WebViewClient onLoadResource
+....   public void onLoadResource(android.webkit.WebView, java.lang.String);
+
+android/webkit/WebViewClient onPageStarted
+....   public void onPageStarted(android.webkit.WebView, java.lang.String, android.graphics.Bitmap);
+
+android/webkit/WebViewClient onReceivedError
+....   public void onReceivedError(android.webkit.WebView, int, java.lang.String, java.lang.String);
+
+android/webkit/WebViewClient onReceivedSslError
+....   public void onReceivedSslError(android.webkit.WebView, android.webkit.SslErrorHandler, android.net.http.SslError);
+
+android/webkit/WebViewClient shouldOverrideUrlLoading
+....   public boolean shouldOverrideUrlLoading(android.webkit.WebView, java.lang.String);
+
+android/widget/AdapterView getAdapter
+....   public abstract T getAdapter();
+
+android/widget/AdapterView getSelectedView
+....   public abstract android.view.View getSelectedView();
+
+android/widget/AdapterView setAdapter
+....   public abstract void setAdapter(T);
+
+android/widget/AdapterView setOnItemClickListener
+....   public void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener);
+
+android/widget/AdapterView setOnItemLongClickListener
+....   public void setOnItemLongClickListener(android.widget.AdapterView$OnItemLongClickListener);
+
+android/widget/AdapterView setOnItemSelectedListener
+....   public void setOnItemSelectedListener(android.widget.AdapterView$OnItemSelectedListener);
+
+android/widget/AdapterView setSelection
+....   public abstract void setSelection(int);
+
+android/widget/ArrayAdapter getCount
+....   public int getCount();
+
+android/widget/ArrayAdapter getItem
+....   public T getItem(int);
+
+android/widget/ArrayAdapter getItemId
+....   public long getItemId(int);
+
+android/widget/ArrayAdapter getView
+....   public android.view.View getView(int, android.view.View, android.view.ViewGroup);
+
+android/widget/AutoCompleteTextView enoughToFilter
+....   public boolean enoughToFilter();
+
+android/widget/BaseAdapter areAllItemsEnabled
+....   public boolean areAllItemsEnabled();
+
+android/widget/BaseAdapter getDropDownView
+....   public android.view.View getDropDownView(int, android.view.View, android.view.ViewGroup);
+
+android/widget/BaseAdapter getItemViewType
+....   public int getItemViewType(int);
+
+android/widget/BaseAdapter getViewTypeCount
+....   public int getViewTypeCount();
+
+android/widget/BaseAdapter hasStableIds
+....   public boolean hasStableIds();
+
+android/widget/BaseAdapter isEnabled
+....   public boolean isEnabled(int);
+
+android/widget/CursorAdapter bindView
+....   public abstract void bindView(android.view.View, android.content.Context, android.database.Cursor);
+
+android/widget/CursorAdapter convertToString
+....   public java.lang.CharSequence convertToString(android.database.Cursor);
+
+android/widget/CursorAdapter newView
+....   public abstract android.view.View newView(android.content.Context, android.database.Cursor, android.view.ViewGroup);
+
+android/widget/CursorAdapter runQueryOnBackgroundThread
+....   public android.database.Cursor runQueryOnBackgroundThread(java.lang.CharSequence);
+
+android/widget/Filter convertResultToString
+....   public java.lang.CharSequence convertResultToString(java.lang.Object);
+
+android/widget/Filter performFiltering
+....   protected abstract android.widget.Filter$FilterResults performFiltering(java.lang.CharSequence);
+
+android/widget/Filter publishResults
+....   protected abstract void publishResults(java.lang.CharSequence, android.widget.Filter$FilterResults);
+
+android/widget/Gallery getChildStaticTransformation
+....   protected boolean getChildStaticTransformation(android.view.View, android.view.animation.Transformation);
+
+android/widget/Gallery onFling
+....   public boolean onFling(android.view.MotionEvent, android.view.MotionEvent, float, float);
+
+android/widget/HorizontalScrollView onInterceptTouchEvent
+....   public boolean onInterceptTouchEvent(android.view.MotionEvent);
+
+android/widget/HorizontalScrollView onRequestFocusInDescendants
+....   protected boolean onRequestFocusInDescendants(int, android.graphics.Rect);
+
+android/widget/HorizontalScrollView onTouchEvent
+....   public boolean onTouchEvent(android.view.MotionEvent);
+
+android/widget/HorizontalScrollView requestChildFocus
+....   public void requestChildFocus(android.view.View, android.view.View);
+
+android/widget/RadioGroup check
+....   public void check(int);
+
+android/widget/TabHost addTab
+....   public void addTab(android.widget.TabHost$TabSpec);
+
+android/widget/TextView onTextChanged
+....   protected void onTextChanged(java.lang.CharSequence, int, int, int);
+
+android/widget/TextView onTouchEvent
+....   public boolean onTouchEvent(android.view.MotionEvent);
+
+android/widget/TextView setMaxLines
+....   public void setMaxLines(int);
+
+java/io/FilterInputStream available
+....   public int available() throws java.io.IOException;
+
+java/io/FilterInputStream close
+....   public void close() throws java.io.IOException;
+
+java/io/FilterInputStream mark
+....   public synchronized void mark(int);
+
+java/io/FilterInputStream markSupported
+....   public boolean markSupported();
+
+java/io/FilterInputStream read
+....   public int read() throws java.io.IOException;
+
+....   public int read(byte[], int, int) throws java.io.IOException;
+
+java/io/FilterInputStream reset
+....   public synchronized void reset() throws java.io.IOException;
+
+java/io/FilterInputStream skip
+....   public long skip(long) throws java.io.IOException;
+
+java/io/FilterOutputStream close
+....   public void close() throws java.io.IOException;
+
+java/io/FilterOutputStream flush
+....   public void flush() throws java.io.IOException;
+
+java/io/FilterOutputStream write
+....   public void write(byte[], int, int) throws java.io.IOException;
+
+....   public void write(int) throws java.io.IOException;
+
+java/io/FilterReader close
+....   public void close() throws java.io.IOException;
+
+java/io/FilterReader mark
+....   public synchronized void mark(int) throws java.io.IOException;
+
+java/io/FilterReader markSupported
+....   public boolean markSupported();
+
+java/io/FilterReader read
+....   public int read() throws java.io.IOException;
+
+....   public int read(char[], int, int) throws java.io.IOException;
+
+java/io/FilterReader ready
+....   public boolean ready() throws java.io.IOException;
+
+java/io/FilterReader reset
+....   public void reset() throws java.io.IOException;
+
+java/io/FilterReader skip
+....   public long skip(long) throws java.io.IOException;
+
+java/io/FilterWriter close
+....   public void close() throws java.io.IOException;
+
+java/io/FilterWriter flush
+....   public void flush() throws java.io.IOException;
+
+java/io/FilterWriter write
+....   public void write(char[], int, int) throws java.io.IOException;
+
+....   public void write(int) throws java.io.IOException;
+
+....   public void write(java.lang.String, int, int) throws java.io.IOException;
+
+java/io/ObjectOutputStream writeStreamHeader
+....   protected void writeStreamHeader() throws java.io.IOException;
+
+java/io/Writer append
+....   public java.io.Writer append(char) throws java.io.IOException;
+
+....   public java.io.Writer append(java.lang.CharSequence) throws java.io.IOException;
+
+....   public java.io.Writer append(java.lang.CharSequence, int, int) throws java.io.IOException;
+
+....   public java.lang.Appendable append(java.lang.CharSequence, int, int) throws java.io.IOException;
+
+....   public java.lang.Appendable append(java.lang.CharSequence) throws java.io.IOException;
+
+....   public java.lang.Appendable append(char) throws java.io.IOException;
+
+java/io/Writer close
+....   public abstract void close() throws java.io.IOException;
+
+java/io/Writer flush
+....   public abstract void flush() throws java.io.IOException;
+
+java/io/Writer write
+....   public void write(char[]) throws java.io.IOException;
+
+....   public abstract void write(char[], int, int) throws java.io.IOException;
+
+....   public void write(int) throws java.io.IOException;
+
+....   public void write(java.lang.String) throws java.io.IOException;
+
+....   public void write(java.lang.String, int, int) throws java.io.IOException;
+
+java/lang/Object clone
+....   protected java.lang.Object clone() throws java.lang.CloneNotSupportedException;
+
+java/lang/Object finalize
+....   protected void finalize() throws java.lang.Throwable;
+
+java/lang/Object hashCode
+....   public native int hashCode();
+
+java/lang/Thread destroy
+....   public void destroy();
+
+java/lang/Thread run
+....   public void run();
+
+java/lang/ThreadLocal initialValue
+....   protected T initialValue();
+
+java/util/AbstractCollection add
+....   public boolean add(E);
+
+java/util/AbstractCollection addAll
+....   public boolean addAll(java.util.Collection<? extends E>);
+
+java/util/AbstractCollection clear
+....   public void clear();
+
+java/util/AbstractCollection contains
+....   public boolean contains(java.lang.Object);
+
+java/util/AbstractCollection containsAll
+....   public boolean containsAll(java.util.Collection<?>);
+
+java/util/AbstractCollection isEmpty
+....   public boolean isEmpty();
+
+java/util/AbstractCollection iterator
+....   public abstract java.util.Iterator<E> iterator();
+
+java/util/AbstractCollection size
+....   public abstract int size();
+
+java/util/AbstractCollection toArray
+....   public java.lang.Object[] toArray();
+
+....   public <T> T[] toArray(T[]);
+
+java/util/AbstractCollection toString
+....   public java.lang.String toString();
+
+java/util/AbstractList add
+....   public void add(int, E);
+
+....   public boolean add(E);
+
+java/util/AbstractList addAll
+....   public boolean addAll(int, java.util.Collection<? extends E>);
+
+java/util/AbstractList clear
+....   public void clear();
+
+java/util/AbstractList get
+....   public abstract E get(int);
+
+java/util/AbstractList hashCode
+....   public int hashCode();
+
+java/util/AbstractList indexOf
+....   public int indexOf(java.lang.Object);
+
+java/util/AbstractList iterator
+....   public java.util.Iterator<E> iterator();
+
+java/util/AbstractList lastIndexOf
+....   public int lastIndexOf(java.lang.Object);
+
+java/util/AbstractList listIterator
+....   public java.util.ListIterator<E> listIterator();
+
+....   public java.util.ListIterator<E> listIterator(int);
+
+java/util/AbstractList remove
+....   public E remove(int);
+
+java/util/AbstractList removeRange
+....   protected void removeRange(int, int);
+
+java/util/AbstractList set
+....   public E set(int, E);
+
+java/util/AbstractList subList
+....   public java.util.List<E> subList(int, int);
+
+java/util/AbstractMap clear
+....   public void clear();
+
+java/util/AbstractMap containsKey
+....   public boolean containsKey(java.lang.Object);
+
+java/util/AbstractMap containsValue
+....   public boolean containsValue(java.lang.Object);
+
+java/util/AbstractMap entrySet
+....   public abstract java.util.Set<java.util.Map$Entry<K, V>> entrySet();
+
+java/util/AbstractMap equals
+....   public boolean equals(java.lang.Object);
+
+java/util/AbstractMap get
+....   public V get(java.lang.Object);
+
+java/util/AbstractMap hashCode
+....   public int hashCode();
+
+java/util/AbstractMap isEmpty
+....   public boolean isEmpty();
+
+java/util/AbstractMap keySet
+....   public java.util.Set<K> keySet();
+
+java/util/AbstractMap put
+....   public V put(K, V);
+
+java/util/AbstractMap putAll
+....   public void putAll(java.util.Map<? extends K, ? extends V>);
+
+java/util/AbstractMap remove
+....   public V remove(java.lang.Object);
+
+java/util/AbstractMap size
+....   public int size();
+
+java/util/AbstractMap toString
+....   public java.lang.String toString();
+
+java/util/AbstractMap values
+....   public java.util.Collection<V> values();
+
+java/util/AbstractQueue add
+....   public boolean add(E);
+
+java/util/AbstractQueue addAll
+....   public boolean addAll(java.util.Collection<? extends E>);
+
+java/util/AbstractQueue clear
+....   public void clear();
+
+java/util/AbstractQueue remove
+....   public E remove();
+
+java/util/AbstractSequentialList listIterator
+....   public abstract java.util.ListIterator<E> listIterator(int);
+
+java/util/AbstractSet hashCode
+....   public int hashCode();
+
+java/util/LinkedHashMap removeEldestEntry
+....   protected boolean removeEldestEntry(java.util.Map$Entry<K, V>);
+
+java/util/TimerTask run
+....   public abstract void run();
+
+java/util/concurrent/ConcurrentHashMap containsValue
+....   public boolean containsValue(java.lang.Object);
+
+java/util/concurrent/ConcurrentHashMap entrySet
+....   public java.util.Set<java.util.Map$Entry<K, V>> entrySet();
+
+java/util/concurrent/ConcurrentHashMap keySet
+....   public java.util.Set<K> keySet();
+
+java/util/concurrent/FutureTask done
+....   protected void done();
+
+java/util/concurrent/LinkedBlockingQueue contains
+....   public boolean contains(java.lang.Object);
+
+java/util/concurrent/locks/AbstractQueuedSynchronizer isHeldExclusively
+....   protected boolean isHeldExclusively();
+
+java/util/concurrent/locks/AbstractQueuedSynchronizer tryAcquire
+....   protected boolean tryAcquire(int);
+
+java/util/concurrent/locks/AbstractQueuedSynchronizer tryAcquireShared
+....   protected int tryAcquireShared(int);
+
+java/util/concurrent/locks/AbstractQueuedSynchronizer tryRelease
+....   protected boolean tryRelease(int);
+
+java/util/concurrent/locks/AbstractQueuedSynchronizer tryReleaseShared
+....   protected boolean tryReleaseShared(int);
+
+java/util/zip/ZipEntry getComment
+....   public java.lang.String getComment();
+
+java/util/zip/ZipEntry hashCode
+....   public int hashCode();
+
+java/util/zip/ZipEntry setComment
+....   public void setComment(java.lang.String);
+
+java/util/zip/ZipEntry setMethod
+....   public void setMethod(int);
+
+java/util/zip/ZipEntry setSize
+....   public void setSize(long);
+
+java/util/zip/ZipEntry setTime
+....   public void setTime(long);
+
+javax/xml/transform/sax/SAXSource getXMLReader
+....   public org.xml.sax.XMLReader getXMLReader();
+
+javax/xml/transform/sax/SAXSource setXMLReader
+....   public void setXMLReader(org.xml.sax.XMLReader);
+
+org/apache/http/conn/ssl/SSLSocketFactory connectSocket
+....   public java.net.Socket connectSocket(java.net.Socket, java.lang.String, int, java.net.InetAddress, int, org.apache.http.params.HttpParams) throws java.io.IOException;
+
+org/apache/http/conn/ssl/SSLSocketFactory createSocket
+....   public java.net.Socket createSocket() throws java.io.IOException;
+
+....   public java.net.Socket createSocket(java.net.Socket, java.lang.String, int, boolean) throws java.io.IOException, java.net.UnknownHostException;
+
+org/apache/http/entity/ByteArrayEntity writeTo
+....   public void writeTo(java.io.OutputStream) throws java.io.IOException;
+
+org/apache/http/entity/HttpEntityWrapper getContent
+....   public java.io.InputStream getContent() throws java.io.IOException;
+
+org/apache/http/entity/HttpEntityWrapper getContentLength
+....   public long getContentLength();
+
+org/apache/http/impl/client/DefaultHttpClient createHttpContext
+....   protected org.apache.http.protocol.HttpContext createHttpContext();
+
+org/xml/sax/InputSource getCharacterStream
+....   public java.io.Reader getCharacterStream();
+
+org/xml/sax/InputSource setCharacterStream
+....   public void setCharacterStream(java.io.Reader);
+
+org/xml/sax/helpers/DefaultHandler characters
+....   public void characters(char[], int, int) throws org.xml.sax.SAXException;
+
+org/xml/sax/helpers/DefaultHandler endElement
+....   public void endElement(java.lang.String, java.lang.String, java.lang.String) throws org.xml.sax.SAXException;
+
+org/xml/sax/helpers/DefaultHandler ignorableWhitespace
+....   public void ignorableWhitespace(char[], int, int) throws org.xml.sax.SAXException;
+
+org/xml/sax/helpers/DefaultHandler notationDecl
+....   public void notationDecl(java.lang.String, java.lang.String, java.lang.String) throws org.xml.sax.SAXException;
+
+org/xml/sax/helpers/DefaultHandler processingInstruction
+....   public void processingInstruction(java.lang.String, java.lang.String) throws org.xml.sax.SAXException;
+
+org/xml/sax/helpers/DefaultHandler setDocumentLocator
+....   public void setDocumentLocator(org.xml.sax.Locator);
+
+org/xml/sax/helpers/DefaultHandler skippedEntity
+....   public void skippedEntity(java.lang.String) throws org.xml.sax.SAXException;
+
+org/xml/sax/helpers/DefaultHandler startDocument
+....   public void startDocument() throws org.xml.sax.SAXException;
+
+org/xml/sax/helpers/DefaultHandler startElement
+....   public void startElement(java.lang.String, java.lang.String, java.lang.String, org.xml.sax.Attributes) throws org.xml.sax.SAXException;
+
+org/xml/sax/helpers/DefaultHandler startPrefixMapping
+....   public void startPrefixMapping(java.lang.String, java.lang.String) throws org.xml.sax.SAXException;
+
+org/xml/sax/helpers/DefaultHandler unparsedEntityDecl
+....   public void unparsedEntityDecl(java.lang.String, java.lang.String, java.lang.String, java.lang.String) throws org.xml.sax.SAXException;

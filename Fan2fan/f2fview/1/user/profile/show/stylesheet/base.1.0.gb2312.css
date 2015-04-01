@@ -1,0 +1,96 @@
+@charset "utf-8";
+
+/* yui reset */
+html{color:#000;background:#FFF}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}q:before,q:after{content:''}abbr,acronym{border:0;font-variant:normal}sup{vertical-align:text-top}sub{vertical-align:text-bottom}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit}input,textarea,select{*font-size:100%}legend{color:#000}#yui3-css-stamp.cssreset{display:none}
+
+/* yui font (edited) */
+body{font:12px/20px "Microsoft YaHei","Arial","SimSun","宋体",serif;}select,input,button,textarea{font-size:99%;}table{font-size:inherit;font:100%}pre,code,kbd,samp,tt{font-family:monospace;*font-size:108%;line-height:100%}#yui3-css-stamp.cssfonts{display:none}
+
+
+/* udv common */
+.udv-clearfix:after{content:"\0020";display:block;height:0;clear:both;}
+.udv-clearfix{zoom:1;}
+.udv-clearit{clear:both;height:0;font-size:0;overflow:hidden;}
+
+html{
+    background: #e3e3e3;
+}
+body{
+    font-size: 14px;
+}
+
+.wrap{
+    background:#fff;
+    width:1024px;
+    margin:auto;
+}
+
+/*navBar begin*/
+.navBar{
+    padding:20px 0;
+}
+.navBar ul{
+    padding:0 40px;
+    float:right;
+}
+.navBar ul li{
+    float:left;
+    height:20px;
+    border-right:1px solid #717171;
+    padding:0 10px;
+    margin-right: 10px;
+    background:url(../../img/markers.png) no-repeat;
+}
+.navBar ul li a{
+    text-decoration: none;
+    color:#717171;
+    padding-left:15px;
+}
+.navBar ul li a:hover{
+    text-decoration: underline;
+}
+/*navBar end*/
+
+/*footer begin*/
+.footer{
+    background: #717171;
+}
+.f_wrap{
+    width: 944px;
+    margin:auto;
+    padding:25px 40px 15px;
+}
+.f_top{
+    color: #fff;
+    text-align: right;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing:1pt;
+}
+.fb_left{
+    width:440px;
+    float: left;
+}
+.fb_left p{
+    background:url(../../img/markers.png) no-repeat -60px -30px;
+    height:36px;
+    text-indent: -999em;
+    margin-bottom: 15px;
+}
+.fb_left ul li{
+    float:left;
+    border-right:1px solid #99d5a8;
+    padding:0 5px;
+}
+.fb_left ul li a{
+    text-decoration: none;
+    color:#99d5a8;
+}
+.fb_right{
+    width:504px;
+    float: right;
+    text-align: right;
+    color:#fff;
+    margin-top: 15px;
+}
+/*footer end*/

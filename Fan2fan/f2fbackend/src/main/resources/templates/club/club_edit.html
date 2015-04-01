@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/HTMLHead :: headTag(${pageName == 'new'} ? 'Create Team': 'Edit Team Info')">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>fan2fan</title>
+
+    <link href="../../static/css/club/team.css" rel="stylesheet"/>
+    <!-- Replace the relative path of resources if needed. -->
+    <link href="../../static/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
+    <link href="../../static/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="../../static/lib/select2/select2.css" rel="stylesheet"/>
+    <link href="../../static/css/account.css" rel="stylesheet"/>
+    <link href="../../static/css/common.css" rel="stylesheet"/>
+    <link href="../../static/css/package.css" rel="stylesheet"/>
+
+    <script src="../../static/lib/jquery/jquery.min.js"></script>
+    <script src="../../static/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../../static/js/logic/city.js"></script>
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-static-top" role="navigation"
+     th:replace="fragments/Header :: header">
+    <div class="nav-container">
+        <div class="navbar-collapse collapse">
+            <div class="navbar-brand">Fan2Fan</div>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown" th:if="${session.user != null}">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       th:href="@{/users/edit/}"
+                       th:text="${session.user.firstName}">Ruici Luo<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Your Trips</a></li>
+                        <li><a href="#">Invite Your Friends</a></li>
+                        <li><a href="#">Account Settings</a></li>
+                        <li class="nav-divider"></li>
+                        <li><a href="#">Log out</a></li>
+                        <li></li>
+                    </ul>
+                </li>
+                <li class="divider"></li>
+                <li th:if="${session.user != null}">
+                    <a href="#"><i class="fa fa-envelope-o"></i></a>
+                </li>
+
+                <!--/*/
+                <li><a href="#" th:href="@{/account/signup/}">SIGN UP</a></li>
+                <li><a href="#" th:href="@{/account/login/}">LOG IN</a></li>
+                /*/-->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        LANGUAGE <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">English</a></li>
+                        <li><a href="#">中文（简体）</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+    </div>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 wizard">
+            <form role="form" action="#" method="post" th:object="${teamCommand}"
+                  th:action="@{/teams/} + (${pageName == 'edit'} ? *{id} + '/edit/' : 'create/')">
+                <div class="form-group" th:if="${pageName == 'edit'}">
+                    <label>Logo</label>
+                    <div class="avatar-preview-wrap">
+                        <img class="avatar-preview" th:src="${logoUrl}" alt="" />
+                    </div>
+                    <div class="btn-wrap">
+                        <span class="btn btn-success fileinput-button">
+                            <span>Upload</span>
+                            <input id="fileupload" type="file" name="logo" data-url="/teams/*{id}/logo/" />
+                            <span class="progress"></span>
+                        </span>
+                        <input id="logoUrl" type="hidden" name="logoUrl" th:field="*{logoUrl}" />
+                    </div><!-- .btn-wrap -->
+                </div>
+                <div class="form-group">
+                    <label>name</label>
+                    <input th:field="*{name}" type="text" class="form-control" placeholder="Enter Team Name"/>
+                </div>
+                <div class="form-group">
+                    <label>country</label>
+                    <select th:field="*{country}" class="form-control">
+                        <option th:each="c : ${countries}"
+                                th:value="${c.name}"
+                                th:text="${c.name}">Country
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>city</label>
+                    <select th:field="*{city}" class="form-control">
+                        <option th:each="c: ${cities}"
+                                th:value="${c.name}"
+                                th:text="${c.name}">City
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>league</label>
+                    <select th:field="*{leagueId}" class="form-control">
+                        <option th:each="league : ${leagues}"
+                                th:value="${league.id}"
+                                th:text="${league.name}">League
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>description</label>
+                    <textarea th:field="*{desc}" class="form-control" placeholder="description"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
+<script type="text/javascript">
+    citySelect('#country', '#city');
+</script>
+
+</body>
+</html>

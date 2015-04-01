@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/HTMLHead :: headTag(${user.userName})">
+  <meta name="keywords" content="fan,football"/>
+  <meta name="description" content="fan2fan"/>
+  <meta charset="utf-8"/>
+  <title>PersonFile</title>
+  <link rel="stylesheet" type="text/css" href="../../static/css/profile/base.1.0.gb2312.css"/>
+  <link rel="stylesheet" type="text/css" href="../../static/css/profile/personFile.css"/>
+  <link rel="stylesheet" type="text/css" href="../../static/css/profile/story_item.css"/>
+  <script type="text/javascript" src="../../static/js/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="../../static/js/ajax.js"></script>
+</head>
+<body>
+
+  <div id="page-wrap">
+  <div th:replace="fragments/Header :: header"></div>
+  <div class="user-row bg-primary">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3"> 
+                <img class="user-avatar" th:unless="${#strings.isEmpty(userDetail.avatarUrl)}" th:src="${userDetail.avatarUrl}" alt="" />
+                <img class="user-avatar" th:if="${#strings.isEmpty(userDetail.avatarUrl)}" src="../../static/img/default-gravatar.png" alt="" />
+            </div><!-- .col-sm-3 -->
+            <div class="col-sm-6"> 
+                <h2> <span th:unless="${#strings.isEmpty(user.fullName)}" th:text="${user.fullName}">userName</span> </h2>
+                <p>
+                <span th:text="${userDetail.city}"></span><span th:unless="${#strings.isEmpty(userDetail.nation)}" th:text="${', ' + userDetail.nation} "></span>
+                </p>
+                <p>
+                <span th:text="${userDetail.favoriteTeam.name + ' Fan'}">Chelsea Fan</span>
+                </p>
+                <p>
+                  <span th:if="${userDetail.age}" th:text="${userDetail.age + ' years old'}">12 years old</span>
+                </p>
+                <p th:text="${userDetail.desc}"></p>
+            </div><!-- .col-sm-6 -->
+            <div class="col-sm-3">
+                <h2 class="row">
+                    <a class="btn col-sm-12 btn-success" th:if="${isHome}" href="/packages/create/">Create Package</a>
+                </h2>
+                <p class="row">
+                    <a class="btn col-sm-12 btn-default" th:if="${isHome}" href="/users/edit/">Edit Profile</a>
+                </p>
+            </div><!-- .col-sm-3 -->
+        </div><!-- .row -->
+    </div><!--container-->
+  </div><!-- .user-row -->
+  <div class="container">
+    
+    <div th:if="${#arrays.length(packages) > 0}" class="package-list-wrap row">
+        <div class="package-list col-sm-9" role="main">
+            <div class="package" th:each="package : ${packages}">
+                <div class="page-header">
+                    <h2 class="text-primary"><span th:text="${package.title}"></span><small th:if="${isHome}"> <a class="text-info" th:href="${'/packages/' + package.id + '/edit/'}"><span class="glyphicon glyphicon-edit"></span></a> </small></h2>
+                </div><!-- page-header -->
+                <div class="services">
+                    <div class="service" th:each="item : ${package.trips}" th:if="${#arrays.length(package.trips) > 0}">
+                        <h4 th:text="${item.place}"></h4>
+                        <p th:text="${item.desc}"></p>
+                        <img class="lazy package-cover" th:unless="${#strings.isEmpty(item.imageUrl)}" src="back.png" th:attr="data-src=${item.imageUrl}" alt="" />
+
+                    </div><!-- .service -->
+                </div><!-- .services -->
+            </div><!-- .package row -->
+        </div><!-- .package-list -->
+    </div><!-- .package-list-wrap -->
+
+    <div th:unless="${#arrays.length(packages) > 0}" class="package-blank-wrap">
+        <div th:if="${isHome}" class="jumbotron">
+            <h3>You don't have any packages!</h3>
+            <p> Create your package on PartnerFans is an easy way to connect the fans you like.  </p>
+            <p> You'll also get to meet interesting fans from around the world!  </p>
+            <p><a class="btn btn-primary btn-lg" role="button" href="/packages/create/">Create A New Package</a></p>
+        </div>
+    </div>
+    
+  </div><!-- .container -->
+
+  </div><!-- #page-wrap -->
+
+
+  <div id="footer" th:replace="fragments/Footer :: footer">
+      <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+          <div class="container">
+              <p class="text-muted credit">© Fan2Fan Group 2014</p>
+          </div>
+      </nav>
+  </div>
+
+
+</body>
+</html>

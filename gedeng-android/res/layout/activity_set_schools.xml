@@ -1,0 +1,132 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/lib/com.gedeng.client"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:padding="20dp" >
+
+    <LinearLayout
+        android:id="@+id/layout_collage_student"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="80dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="大学生"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/imageView_collageStudent"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:src="@drawable/collage_student_checked" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_middle_school_student"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="中学生"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/imageView_middleSchoolStudent"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:src="@drawable/middle_school_student" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_primary_school_student"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="80dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="小学生"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/imageView_primarySchoolStudent"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:src="@drawable/primary_school_student" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_school"
+        android:layout_width="match_parent"
+        android:layout_height="96dp"
+        android:layout_below="@id/layout_collage_student"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/register_background"
+        android:orientation="horizontal"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp" >
+
+        <EditText
+            android:id="@+id/editText_schoolName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.5"
+            android:hint="@string/register_input_school_collage"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:singleLine="true"
+            android:textSize="16sp" >
+        </EditText>
+
+        <EditText
+            android:id="@+id/editText_schoolYear"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="2dp"
+            android:layout_weight="0.4"
+            android:maxLength="4"
+            android:hint="@string/register_input_school_year"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="16sp" >
+        </EditText>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" 
+        android:gravity="center"
+        android:layout_below="@id/layout_school">
+
+        <Button
+            android:id="@+id/button_finish"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/button_bg_selector"
+            android:text="@string/ok"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</RelativeLayout>

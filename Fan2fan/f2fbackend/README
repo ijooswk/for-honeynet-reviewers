@@ -1,0 +1,48 @@
+## D
+
+##################### One. Teamwork #######################
+######## I. Git ########
+1. git config --global core.autocrlf true
+
+
+###################### Two. Project ########################
+1. import as a maven project.
+2. set encoding as UTF-8 for the project.
+3. set indent as 4 spaces for .java and 2 spaces for .xml or .html, tab is strictly forbidden.
+4. copy application.properties.example to application.properties
+5. setup your own properties in application.properties
+6. run Application.main
+
+
+##################### Three. Database #######################
+######## I. Setup Database ########
+1. create database: create database [db_name] default charset utf8 COLLATE utf8_general_ci;
+2. import maven project named 'db'
+3. create 'environments' folder in db\migration
+4. copy development.properties.example to environments/development.properties
+5. change your database properties in development.properties
+6*. run migration:status.  You can see there some scripts pending
+7. run migration:up.  Your database will update to the newest version
+Note: If you're using IntelliJ IDE, it will report errors of "--//" in migration
+      script files. Just ignore them, don't try to change it, it's the specific
+      annotations for migration tool to identify tasks.
+
+######## II. Change database #######
+1. write changing scripts
+2. write rollback scripts
+3. test both scripts with sql command
+4. run mvn migration:new -Dmigration.description="[your file description]"
+5. write the change and rollback scripts into your new migration file.
+6. run migration:up
+
+
+##################### Four. Tools #####################
+1. install [nodejs](http://nodejs.org)
+2. install [bower](http://bower.io): npm -g install bower
+3. cd project_root && bower install
+4. the dependencies(jquery, bootstrap, etc.) will be install at `src/main/resources/static/lib`
+
+
+##################### Five. Test ######################
+1. configure the settings in TestingApplication.java and test/resources/application.properties
+2. run tests

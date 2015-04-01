@@ -1,0 +1,15 @@
+libcore/junit/src/main/java/junit/framework/TestResult.java
+libcore/junit/src/main/java/junit/framework/TestListener.java
+libcore/junit/src/main/java/junit/framework/ComparisonFailure.java
+libcore/junit/src/main/java/junit/framework/TestSuite.java
+libcore/junit/src/main/java/junit/framework/Assert.java
+libcore/junit/src/main/java/junit/framework/Test.java
+libcore/junit/src/main/java/junit/framework/TestFailure.java
+libcore/junit/src/main/java/junit/framework/Protectable.java
+libcore/junit/src/main/java/junit/framework/TestCase.java
+libcore/junit/src/main/java/junit/framework/AssertionFailedError.java
+libcore/junit/src/main/java/junit/extensions/RepeatedTest.java
+libcore/junit/src/main/java/junit/extensions/TestSetup.java
+libcore/junit/src/main/java/junit/extensions/ExceptionTestCase.java
+libcore/junit/src/main/java/junit/extensions/ActiveTestSuite.java
+libcore/junit/src/main/java/junit/extensions/TestDecorator.java

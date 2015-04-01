@@ -1,0 +1,15 @@
+import android.content.*;
+import android.database.*;
+
+public class CPDriver {
+	public static void main (String [] args)
+	{
+		T_CPCLASS provider = new T_CPCLASS();
+		if (!provider.onCreate())
+			throw new RuntimeException("ContentProvider.onCreate() returns false");
+		Cursor cursor = provider.query(android.net.Uri.parse("content://T_CPAUTHORITY"), null, null, null, null);
+		if (cursor != null) {
+			System.out.println(cursor.getCount());
+		}
+	}
+}

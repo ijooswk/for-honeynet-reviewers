@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/lib/com.gedeng.client"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <ImageView
+        android:id="@+id/imageView_background"
+        android:layout_width="fill_parent"
+        android:layout_height="360dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:contentDescription="@null"
+        android:src="@drawable/background" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout_panel"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_alignBottom="@+id/imageView_background"
+        android:layout_alignParentLeft="true"
+        android:background="#7F000000" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="90dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/textView_userName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:text="User Name"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5" />
+
+            <TextView
+                android:id="@+id/textView_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:text="July 8, 2014"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/textView_postSourceDiscription"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:gravity="center"
+                android:text="From Friend Circle"
+                android:textColor="#FFFFFF" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5" />
+
+            <ImageView
+                android:id="@+id/imageView_like"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_like" />
+
+            <TextView
+                android:id="@+id/textView_likeCount"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="#FFFFFF" />
+
+            <ImageView
+                android:id="@+id/imageView_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/ic_comment" />
+
+            <TextView
+                android:id="@+id/textView_commentCount"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="20dp"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <com.gedeng.ui.customview.CircularImageView
+        android:id="@+id/imageView_portrait"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignBottom="@+id/imageView_background"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="40dp"
+        android:layout_marginLeft="10dp"
+        android:contentDescription="@null"
+        android:src="@drawable/sample360"
+        app:border="true"
+        app:border_color="@color/GrayLight"
+        app:border_width="4dp"
+        app:shadow="true" />
+
+</RelativeLayout>

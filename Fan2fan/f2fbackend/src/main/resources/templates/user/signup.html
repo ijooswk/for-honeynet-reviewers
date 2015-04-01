@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/HTMLHead :: headTag('Sign up ')">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="keywords" content="fan,football"/>
+  <meta name="description" content="fan2fan"/>
+  <title>Sign up | Fan2Fan</title>
+
+  <!--<link rel="icon" type="image/x-icon" href=""/>-->
+
+  <link href="../../static/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
+  <link href="../../static/lib/bootstrap-3-datepicker/css/datepicker3.css" rel="stylesheet"/>
+  <link href="../../static/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+  <link href="../../static/lib/jquery-steps/demo/css/jquery.steps.css" rel="stylesheet"/>
+  <link href="../../static/lib/dropzone/downloads/css/dropzone.css" rel="stylesheet"/>
+  <link href="../../static/css/common.css" rel="stylesheet"/>
+  <link href="../../static/css/nav.css" rel="stylesheet"/>
+  <link href="../../static/css/package.css" rel="stylesheet"/>
+  <link href="../../static/css/chart.css" rel="stylesheet"/>
+  <link href="../../static/css/account.css" rel="stylesheet"/>
+
+  <!-- Library Definition -->
+  <script src="../../static/lib/jquery/jquery.min.js"></script>
+  <script src="../../static/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="../../static/lib/bootstrap-3-datepicker/js/bootstrap-datepicker.js"></script>
+  <script src="../../static/lib/jquery-steps/build/jquery.steps.min.js"></script>
+  <script src="../../static/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+  <script src="../../static/lib/dropzone/downloads/dropzone.min.js"></script>
+
+  <!-- Init Module -->
+  <script src="../../static/js/init.js"></script>
+  <!-- Module Definition -->
+  <script src="../../static/js/pages/editPackage.js"></script>
+  <script src="../../static/js/pages/package.js"></script>
+  <script src="../../static/js/pages/forget.js"></script>
+  <script src="../../static/js/pages/reset.js"></script>
+
+  <!-- Load Module -->
+  <script src="../../static/js/loader.js"></script>
+</head>
+
+<body>
+
+<div id="Signup" class="account container" data-page-name="">
+  <div class="wrapper">
+    <form th:object="${signupCommand}" role="form" method="post">
+      <h2 class="form-signin-heading">Partner Fan</h2>
+      <input type="text" class="form-control top-input"
+             name="email" th:field="*{email}"
+             placeholder="Email"/>
+      <input type="hidden"
+             name="code" th:field="*{code}"
+             placeholder="Invitation Code" />
+      <input type="text" class="form-control middle-input"
+             name="username" th:field="*{userName}"
+             placeholder="Username"/>
+      <input type="password" class="form-control middle-input" id="password"
+             name="password" th:field="*{password}"
+             placeholder="Password"/>
+      <input type="password" class="form-control bottom-input" id="repeatPassword"
+             name="repeatPassword" th:field="*{repeatPassword}"
+             placeholder="Confirm Password"/>
+      <ul class="signup_forms_errors" id="signup_form_errors">
+        <li class="error" th:if="${signupMessage} != null"></li>
+        <li class="error" th:if="${#fields.hasErrors('all')}" th:errors="*{all}">Input is incorrect</li>
+      </ul>
+      <button class="btn btn-primary btn-block" type="submit">Sign up</button>
+    </form>
+  </div>
+</div>
+
+<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+  <a class="signup_link btn btn-primary text-center" href="#" th:href="@{/account/login/}">Log in</a>
+</nav>
+</body>
+</html>

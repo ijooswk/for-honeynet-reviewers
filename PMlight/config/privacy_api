@@ -1,0 +1,115 @@
+# DEFAULT API LIST
+# All methods of ContentResolver
+Landroid/content/ContentResolver;->query
+
+# App List
+Landroid/content/pm/PackageManager;->getInstalledApplications
+Landroid/content/pm/PackageManager;->getInstalledPackages
+Landroid/content/pm/PackageManager;->queryIntentActivities
+
+# TelephonyManager
+Landroid/telephony/TelephonyManager;->getLine1Number
+Landroid/telephony/TelephonyManager;->getCellLocation
+Landroid/telephony/TelephonyManager;->getDeviceId
+
+# Location
+Landroid/location/LocationManager;->requestLocationUpdates
+Landroid/location/LocationManager;->getLastKnownLocation
+
+# Wifi
+Landroid/net/wifi/WifiManager;->getScanResults
+Landroid/net/wifi/WifiManager;->getConnectionInfo
+
+# Sensor
+Landroid/hardware/SensorManager;->registerListener
+
+# reflect
+# Ljava/lang/reflect/Method;->invoke
+
+# SINK API LIST
+
+# Intent
+Landroid/content/ContextWrapper;->sendBroadcast
+
+# Network IO
+Ljava/net/URL;->openConnection
+
+# stream description fetch
+Ljava/lang/Process;->getOutputStream
+Ljava/net/Socket;->getOutputStream
+Ljava/net/URLConnection;->getOutputStream
+Ljava/net/HttpURLConnection;->getOutputStream
+Ljava/net/HttpsURLConnection;->getOutputStream
+
+# IO
+Ljava/io/BufferedWriter;-><init>
+Ljava/io/OutputStreamWriter;-><init>
+Ljava/io/FileWriter;-><init>
+Ljava/io/FilterWriter;-><init>
+Ljava/io/PrintWriter;-><init>
+
+Ljava/io/OutputStream;-><init>
+Ljava/io/BufferedOutputStream;-><init>
+Ljava/io/DataOutputStream;-><init>
+Ljava/io/FileOutputStream;-><init>
+Ljava/io/FilterOutputStream;-><init>
+Ljava/io/ObjectOutputStream;-><init>
+Ljava/io/OutputStream;-><init>
+Ljava/io/PrintStream;-><init>
+Ljava/io/PipedOutputStream;-><init>
+Ljava/io/DataOutputStream;-><init>
+Ljava/io/ObjectOutputStream;-><init>
+
+Ljava/io/Writer;->write
+Ljava/io/Writer;->append
+Ljava/io/BufferedWriter;->write
+Ljava/io/OutputStreamWriter;->write
+Ljava/io/FileWriter;->write
+Ljava/io/CharArrayWriter;->writeTo
+Ljava/io/FilterWriter;->write
+Ljava/io/PrintWriter;->append
+Ljava/io/PrintWriter;->format
+Ljava/io/PrintWriter;->print
+Ljava/io/PrintWriter;->printf
+Ljava/io/PrintWriter;->println
+Ljava/io/PrintWriter;->write
+
+Ljava/io/OutputStream;->write
+Ljava/io/BufferedOutputStream;->write
+Ljava/io/ByteArrayOutputStream;->writeTo
+Ljava/io/DataOutputStream;->write
+Ljava/io/FileOutputStream;->write
+Ljava/io/FilterOutputStream;->write
+Ljava/io/ObjectOutputStream;->write
+Ljava/io/OutputStream;->write
+Ljava/io/PrintStream;->append
+Ljava/io/PrintStream;->format
+Ljava/io/PrintStream;->print
+Ljava/io/PrintStream;->printf
+Ljava/io/PrintStream;->println
+Ljava/io/PipedOutputStream;->write
+Ljava/io/DataOutputStream;->writeBoolean
+Ljava/io/DataOutputStream;->writeByte
+Ljava/io/DataOutputStream;->writeBytes
+Ljava/io/DataOutputStream;->writeChar
+Ljava/io/DataOutputStream;->writeChars
+Ljava/io/DataOutputStream;->writeDouble
+Ljava/io/DataOutputStream;->writeFloat
+Ljava/io/DataOutputStream;->writeInt
+Ljava/io/DataOutputStream;->writeLong
+Ljava/io/DataOutputStream;->writeShort
+Ljava/io/DataOutputStream;->writeUTF
+Ljava/io/ObjectOutputStream;->writeBoolean
+Ljava/io/ObjectOutputStream;->writeByte
+Ljava/io/ObjectOutputStream;->writeBytes
+Ljava/io/ObjectOutputStream;->writeChar
+Ljava/io/ObjectOutputStream;->writeChars
+Ljava/io/ObjectOutputStream;->writeDouble
+Ljava/io/ObjectOutputStream;->writeFloat
+Ljava/io/ObjectOutputStream;->writeInt
+Ljava/io/ObjectOutputStream;->writeLong
+Ljava/io/ObjectOutputStream;->writeShort
+Ljava/io/ObjectOutputStream;->writeUTF
+Ljava/io/ObjectOutputStream;->writeFields
+Ljava/io/ObjectOutputStream;->writeObject
+Ljava/io/ObjectOutputStream;->writeUnshared

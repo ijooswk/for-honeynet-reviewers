@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/HTMLHead :: headTag('Update your profile')">
+  <meta charset="UTF-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <title>Fan2Fan</title>
+
+  <!-- Replace the relative path of resources if needed. -->
+  <link href="../../static/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
+  <link href="../../static/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+  <link href="../../static/lib/select2/select2.css" rel="stylesheet"/>
+  <link href="../../static/css/account.css" rel="stylesheet"/>
+  <link href="../../static/css/common.css" rel="stylesheet"/>
+  <link href="../../static/css/package.css" rel="stylesheet"/>
+
+  <script src="../../static/lib/jquery/jquery.min.js"></script>
+  <script src="../../static/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="../../static/lib/select2/select2.min.js"></script>
+
+  <!-- Init Module -->
+  <script src="../../static/js/init.js"></script>
+  <!-- Module Definition -->
+  <script src="../../static/js/pages/editPackage.js"></script>
+  <script src="../../static/js/pages/editProfile.js"></script>
+
+  <!-- Load Module -->
+  <script src="../../static/js/loader.js"></script>
+
+</head>
+<body>
+
+<!-- Header of Page-->
+<div id="header" class="navbar navbar-default navbar-static-top" role="navigation"
+     th:replace="fragments/Header :: header">
+</div>
+
+<!-- Page Body Here, replace the id attr of following div -->
+<div id="UserProfile" class="container" data-page-name="">
+  <form class="form-user-profile form-horizontal"
+        role="form" method="post"
+        th:object="${userCommand}">
+    <h2>Basic Infomation</h2>
+    <hr/>
+
+    <div class="form-group">
+      <label class="col-md-3 control-label">Avatar</label>
+      <div class="avatar-preview-wrap col-md-3">
+          <img class="avatar-preview" th:src="${avatarUrl}" alt="" />
+      </div><!-- .col-md-3 -->
+      <div class="btn-wrap col-md-3">
+          <span class="btn btn-success fileinput-button">
+              <span>Upload</span>
+              <input id="fileupload" type="file" name="avatar" data-url="/users/avatar/" />
+              <span class="progress"></span>
+          </span>
+          <input id="avatarUrl" type="hidden" name="avatarUrl" th:field="*{avatarUrl}" />
+      </div><!-- .btn-wrap -->
+    </div>
+    <div class="form-group">
+      <label class="col-md-3 control-label">Full Name</label>
+
+      <div class="col-md-9">
+        <input type="text" name="fullName" class="form-control" th:field="*{fullName}"/>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-md-3 control-label">Gender</label>
+
+      <div class="col-md-9">
+        <select class="form-control" th:field="*{gender}">
+          <option value="MALE">Male</option>
+          <option value="FEMALE">Female</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-md-3 control-label">Birthday</label>
+
+      <div class="col-md-9">
+        <input type="text" th:field="*{birth}" class="form-control datepicker" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-md-3 control-label">Description</label>
+
+      <div class="col-md-9">
+        <textarea lines="3" type="text" th:field="*{desc}" class="form-control"></textarea>
+      </div>
+    </div>
+    <hr/>
+
+    <br/>
+
+    <h2>Contact Information</h2>
+    <hr/>
+
+    <div class="form-group">
+      <label class="col-md-3 control-label">Nation</label>
+
+      <div class="col-md-9">
+        <select name="country" th:field="*{nation}" class="form-control">
+          <option th:each="c : ${countries}"
+                  th:value="${c.name}"
+                  th:text="${c.name}">China</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-md-3 control-label">City</label>
+
+      <div class="col-md-9">
+        <select name="city" th:field="*{city}" class="form-control">
+          <option th:each="c : ${cities}"
+                  th:value="${c.name}"
+                  th:text="${c.name}">Beijing</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-md-3 control-label">Address</label>
+
+      <div class="col-md-9">
+        <input type="text" th:field="*{address}" class="form-control"/>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-md-3 control-label">Occupation</label>
+
+      <div class="col-md-9">
+        <input type="text" th:field="*{occupation}" class="form-control"/>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-md-3 control-label">Phone num</label>
+
+      <div class="col-md-9">
+        <input type="text" th:field="*{phone}" class="form-control"/>
+      </div>
+    </div>
+
+    <hr/>
+    <br/>
+    <h2>Favorite Club</h2>
+    <hr/>
+
+    <div class="form-group">
+      <label class="col-md-3 control-label">Club</label>
+
+      <div class="col-md-9" style="line-height: 28px; font-size: 16px;">
+        <select id="favorite-team" th:field="*{favoriteTeamId}">
+          <option value="0"></option>
+          <optgroup th:each="league : ${leagues}" th:label="${league.name}">
+            <option th:each="team : ${league.teams}"
+                    th:value="${team.id}"
+                    th:text="${team.name}">
+            </option>
+          </optgroup>
+        </select>
+      </div>
+    </div>
+    <hr/>
+    <button class="btn btn-primary" type="submit">Update</button>
+  </form>
+</div>
+
+<div id="footer" th:replace="fragments/Footer :: footer">
+  <nav class="navbar navbar-default">
+    <div class="navbar-inner navbar-content-center container">
+      <p class="text-muted credit">© Fan2Fan Group 2014</p>
+    </div>
+  </nav>
+</div>
+</body>
+</html>

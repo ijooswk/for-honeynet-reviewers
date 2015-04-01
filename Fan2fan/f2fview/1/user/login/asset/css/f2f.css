@@ -1,0 +1,113 @@
+body{background-color:rgba(227,227,227,1.00)}
+#panel{margin:0 auto; padding:0; background-color:rgba(255,255,255,1.00); width:1024px}
+#menu{width:inherit}
+#foot{background-color:rgba(113,113,113,1.00); height:165px; width:inherit;}
+
+.floatleft{
+	float: left;
+}
+.floatright{
+	float: right;
+}
+
+#menu_list
+{
+	list-style-type: none;
+	margin:0px;
+	padding:10px 0px 10px 0px;
+}
+
+#menu_list li{
+	float: left;
+	border-left:1px solid #717171;
+	line-height: 20px;
+	height: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align: center;
+}
+
+#menu_list a, a:link, a:visited {
+	height:100%;
+	width:100%;
+	margin: auto;
+	line-height: 100%;
+	text-align: center;
+	display: block;
+	font: bold 80% Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	color: rgba(164,164,164,1.00) ;
+}
+#menu_list a:hover {
+	color: rgba(164,164,164,1.00) ;
+}
+#menu_list a:active {
+	color: rgba(113,113,113,1.00) ;
+}
+
+.chart{
+	width: 300px;
+	text-align: center;
+}
+.chart .charttop{
+	background-image:url(../img/login/charttopline.png);
+    background-repeat:no-repeat;
+    width: 301px;
+    height: 20px;
+    margin-top: 6px;
+}
+.chart .chartbottom{
+	background-image:url(../img/login/chartbottomline.png);
+    background-repeat:no-repeat;
+    width: 301px;
+    height: 13px;
+    padding: 3px;
+    margin-bottom: 10px;
+}
+.chart .chartbody{
+	background-image:url(../img/login/chartbody.png);
+    background-repeat:repeat-y;
+    width: 301px;
+}
+.chart .charttext{
+	background-color: #E3E3E3;
+	margin-top: 6px;
+	padding-left: 10px;
+	padding-right: 10px;
+	width: 280px;
+	height: 50px;
+	border: none;
+	border-radius: 10px;
+	-moz-border-radius: 10px; /* Old Firefox */
+}
+
+.chart .shortcharttext{
+	background-color: #E3E3E3;
+	padding-left: 10px;
+	padding-right: 10px;
+	width: 140px;
+	height: 50px;
+	border: none;
+	border-radius: 10px;
+	-moz-border-radius: 10px; /* Old Firefox */
+}
+
+.chart .chartlabel{
+	width: 100%;
+	margin-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align: left;
+}
+
+.chart .captchaimg{
+	text-align: center;
+	background-color: #E3E3E3;
+	width:120px;
+	height: 50px;
+	vertical-align: middle;
+	margin-left: 10px;
+}
+.chart label{
+	font: 14px Arial, Helvetica, sans-serif;
+}

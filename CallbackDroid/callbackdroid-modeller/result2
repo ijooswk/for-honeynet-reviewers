@@ -1,0 +1,269 @@
+android/animation/AnimatorListenerAdapter onAnimationCancel
+....   public void onAnimationCancel(android.animation.Animator);
+
+android/animation/AnimatorListenerAdapter onAnimationEnd
+....   public void onAnimationEnd(android.animation.Animator);
+
+android/animation/AnimatorListenerAdapter onAnimationStart
+....   public void onAnimationStart(android.animation.Animator);
+
+android/app/Activity onAttachFragment
+....   public void onAttachFragment(android.app.Fragment);
+
+android/app/Activity onBackPressed
+....   public void onBackPressed();
+
+android/app/Activity onRetainNonConfigurationInstance
+....   public java.lang.Object onRetainNonConfigurationInstance();
+
+android/app/Activity startActivityFromFragment
+....   public void startActivityFromFragment(android.app.Fragment, android.content.Intent, int);
+
+....   public void startActivityFromFragment(android.app.Fragment, android.content.Intent, int, android.os.Bundle);
+
+android/app/Service onBind
+....   public abstract android.os.IBinder onBind(android.content.Intent);
+
+android/content/ContentProvider delete
+....   public abstract int delete(android.net.Uri, java.lang.String, java.lang.String[]);
+
+android/content/ContentProvider getType
+....   public abstract java.lang.String getType(android.net.Uri);
+
+android/content/ContentProvider insert
+....   public abstract android.net.Uri insert(android.net.Uri, android.content.ContentValues);
+
+android/content/ContentProvider onCreate
+....   public abstract boolean onCreate();
+
+android/content/ContentProvider openFile
+....   public android.os.ParcelFileDescriptor openFile(android.net.Uri, java.lang.String) throws java.io.FileNotFoundException;
+
+....   public android.os.ParcelFileDescriptor openFile(android.net.Uri, java.lang.String, android.os.CancellationSignal) throws java.io.FileNotFoundException;
+
+android/content/ContentProvider query
+....   public abstract android.database.Cursor query(android.net.Uri, java.lang.String[], java.lang.String, java.lang.String[], java.lang.String);
+
+....   public android.database.Cursor query(android.net.Uri, java.lang.String[], java.lang.String, java.lang.String[], java.lang.String, android.os.CancellationSignal);
+
+android/content/ContentProvider update
+....   public abstract int update(android.net.Uri, android.content.ContentValues, java.lang.String, java.lang.String[]);
+
+android/database/ContentObserver deliverSelfNotifications
+....   public boolean deliverSelfNotifications();
+
+android/database/ContentObserver onChange
+....   public void onChange(boolean);
+
+....   public void onChange(boolean, android.net.Uri);
+
+android/graphics/drawable/Drawable getAlpha
+....   public int getAlpha();
+
+android/graphics/drawable/Drawable onLevelChange
+....   protected boolean onLevelChange(int);
+
+android/graphics/drawable/shapes/OvalShape draw
+....   public void draw(android.graphics.Canvas, android.graphics.Paint);
+
+android/os/AsyncTask doInBackground
+....   protected abstract Result doInBackground(Params...);
+
+android/os/AsyncTask onCancelled
+....   protected void onCancelled(Result);
+
+....   protected void onCancelled();
+
+android/os/AsyncTask onPreExecute
+....   protected void onPreExecute();
+
+android/os/AsyncTask onProgressUpdate
+....   protected void onProgressUpdate(Progress...);
+
+android/print/PrintDocumentAdapter onLayout
+....   public abstract void onLayout(android.print.PrintAttributes, android.print.PrintAttributes, android.os.CancellationSignal, android.print.PrintDocumentAdapter$LayoutResultCallback, android.os.Bundle);
+
+android/print/PrintDocumentAdapter onWrite
+....   public abstract void onWrite(android.print.PageRange[], android.os.ParcelFileDescriptor, android.os.CancellationSignal, android.print.PrintDocumentAdapter$WriteResultCallback);
+
+android/speech/tts/UtteranceProgressListener onDone
+....   public abstract void onDone(java.lang.String);
+
+android/speech/tts/UtteranceProgressListener onError
+....   public abstract void onError(java.lang.String);
+
+android/speech/tts/UtteranceProgressListener onStart
+....   public abstract void onStart(java.lang.String);
+
+android/view/ActionMode finish
+....   public abstract void finish();
+
+android/view/ActionMode getCustomView
+....   public abstract android.view.View getCustomView();
+
+android/view/ActionMode getMenu
+....   public abstract android.view.Menu getMenu();
+
+android/view/ActionMode getMenuInflater
+....   public abstract android.view.MenuInflater getMenuInflater();
+
+android/view/ActionMode getSubtitle
+....   public abstract java.lang.CharSequence getSubtitle();
+
+android/view/ActionMode getTag
+....   public java.lang.Object getTag();
+
+android/view/ActionMode getTitle
+....   public abstract java.lang.CharSequence getTitle();
+
+android/view/ActionMode getTitleOptionalHint
+....   public boolean getTitleOptionalHint();
+
+android/view/ActionMode invalidate
+....   public abstract void invalidate();
+
+android/view/ActionMode isTitleOptional
+....   public boolean isTitleOptional();
+
+android/view/ActionMode setCustomView
+....   public abstract void setCustomView(android.view.View);
+
+android/view/ActionMode setSubtitle
+....   public abstract void setSubtitle(java.lang.CharSequence);
+
+....   public abstract void setSubtitle(int);
+
+android/view/ActionMode setTag
+....   public void setTag(java.lang.Object);
+
+android/view/ActionMode setTitle
+....   public abstract void setTitle(java.lang.CharSequence);
+
+....   public abstract void setTitle(int);
+
+android/view/ActionMode setTitleOptionalHint
+....   public void setTitleOptionalHint(boolean);
+
+android/view/View dispatchDraw
+....   protected void dispatchDraw(android.graphics.Canvas);
+
+android/view/View inflate
+....   public static android.view.View inflate(android.content.Context, int, android.view.ViewGroup);
+
+android/view/View onMeasure
+....   protected void onMeasure(int, int);
+
+android/view/ViewGroup addFocusables
+....   public void addFocusables(java.util.ArrayList<android.view.View>, int, int);
+
+android/view/ViewGroup addTouchables
+....   public void addTouchables(java.util.ArrayList<android.view.View>);
+
+android/view/ViewGroup dispatchRestoreInstanceState
+....   protected void dispatchRestoreInstanceState(android.util.SparseArray<android.os.Parcelable>);
+
+android/view/ViewGroup dispatchSaveInstanceState
+....   protected void dispatchSaveInstanceState(android.util.SparseArray<android.os.Parcelable>);
+
+android/view/ViewGroup generateDefaultLayoutParams
+....   protected android.view.ViewGroup$LayoutParams generateDefaultLayoutParams();
+
+android/view/ViewGroup generateLayoutParams
+....   public android.view.ViewGroup$LayoutParams generateLayoutParams(android.util.AttributeSet);
+
+....   protected android.view.ViewGroup$LayoutParams generateLayoutParams(android.view.ViewGroup$LayoutParams);
+
+android/view/ViewGroup getChildDrawingOrder
+....   protected int getChildDrawingOrder(int, int);
+
+android/view/ViewGroup onLayout
+....   protected abstract void onLayout(boolean, int, int, int, int);
+
+android/view/ViewGroup onRequestFocusInDescendants
+....   protected boolean onRequestFocusInDescendants(int, android.graphics.Rect);
+
+android/view/ViewGroup shouldDelayChildPressedState
+....   public boolean shouldDelayChildPressedState();
+
+android/view/accessibility/AccessibilityNodeProvider createAccessibilityNodeInfo
+....   public android.view.accessibility.AccessibilityNodeInfo createAccessibilityNodeInfo(int);
+
+android/view/accessibility/AccessibilityNodeProvider findAccessibilityNodeInfosByText
+....   public java.util.List<android.view.accessibility.AccessibilityNodeInfo> findAccessibilityNodeInfosByText(java.lang.String, int);
+
+android/view/accessibility/AccessibilityNodeProvider findFocus
+....   public android.view.accessibility.AccessibilityNodeInfo findFocus(int);
+
+android/view/accessibility/AccessibilityNodeProvider performAction
+....   public boolean performAction(int, int, android.os.Bundle);
+
+android/view/animation/Animation applyTransformation
+....   protected void applyTransformation(float, android.view.animation.Transformation);
+
+android/widget/AutoCompleteTextView performCompletion
+....   public void performCompletion();
+
+android/widget/AutoCompleteTextView replaceText
+....   protected void replaceText(java.lang.CharSequence);
+
+android/widget/AutoCompleteTextView setDropDownBackgroundResource
+....   public void setDropDownBackgroundResource(int);
+
+android/widget/BaseAdapter getDropDownView
+....   public android.view.View getDropDownView(int, android.view.View, android.view.ViewGroup);
+
+android/widget/BaseAdapter getItemViewType
+....   public int getItemViewType(int);
+
+android/widget/BaseAdapter getViewTypeCount
+....   public int getViewTypeCount();
+
+android/widget/BaseAdapter hasStableIds
+....   public boolean hasStableIds();
+
+android/widget/CheckedTextView setCheckMarkDrawable
+....   public void setCheckMarkDrawable(int);
+
+....   public void setCheckMarkDrawable(android.graphics.drawable.Drawable);
+
+android/widget/CompoundButton toggle
+....   public void toggle();
+
+android/widget/Filter convertResultToString
+....   public java.lang.CharSequence convertResultToString(java.lang.Object);
+
+android/widget/Filter performFiltering
+....   protected abstract android.widget.Filter$FilterResults performFiltering(java.lang.CharSequence);
+
+android/widget/Filter publishResults
+....   protected abstract void publishResults(java.lang.CharSequence, android.widget.Filter$FilterResults);
+
+android/widget/TabHost addTab
+....   public void addTab(android.widget.TabHost$TabSpec);
+
+java/io/Writer close
+....   public abstract void close() throws java.io.IOException;
+
+java/io/Writer flush
+....   public abstract void flush() throws java.io.IOException;
+
+java/io/Writer write
+....   public void write(char[]) throws java.io.IOException;
+
+....   public abstract void write(char[], int, int) throws java.io.IOException;
+
+....   public void write(int) throws java.io.IOException;
+
+....   public void write(java.lang.String) throws java.io.IOException;
+
+....   public void write(java.lang.String, int, int) throws java.io.IOException;
+
+java/lang/Object notify
+....   public final native void notify();
+
+java/lang/ThreadLocal initialValue
+....   protected T initialValue();
+
+java/util/concurrent/FutureTask done
+....   protected void done();
+

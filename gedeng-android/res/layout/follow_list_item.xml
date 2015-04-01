@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/lib/com.gedeng.client"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+     <com.gedeng.ui.customview.CircularImageView
+        android:id="@+id/imageView_portrait"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_margin="10dp"
+        android:contentDescription="@null"
+        android:src="@drawable/sample360"
+        app:border="true"
+        app:border_color="@color/GrayLight"
+        app:border_width="4dp"
+        app:shadow="true" />
+
+    <TextView
+        android:id="@+id/textView_userName"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="所谓伊人" 
+        android:textSize="16sp"/>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="5" />
+
+    <Button 
+        android:layout_width="80dp"
+        android:layout_height="32dp"
+        android:text="取消关注"
+        android:layout_gravity="center"
+        android:background="@drawable/button_bg_selector"
+        android:textColor="@android:color/white"
+        android:layout_marginRight="10dp"
+        android:textSize="16sp"/>
+
+</LinearLayout>

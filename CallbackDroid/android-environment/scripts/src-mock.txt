@@ -1,0 +1,9 @@
+android/test/mock/MockIContentProvider.java
+android/test/mock/MockCursor.java
+android/test/mock/MockApplication.java
+android/test/mock/MockResources.java
+android/test/mock/MockContentProvider.java
+android/test/mock/MockContentResolver.java
+android/test/mock/MockContext.java
+android/test/mock/MockDialogInterface.java
+android/test/mock/MockPackageManager.java

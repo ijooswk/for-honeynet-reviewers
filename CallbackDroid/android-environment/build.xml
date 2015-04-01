@@ -1,0 +1,83 @@
+<project name="android-jvm-lib" default="default" basedir=".">
+	<!--remove the supportv4 to make it compilable-->
+  <target name="default" depends="base,service" />
+  <target name="libcore" depends="init">
+    <javac destdir="out" includeAntRuntime="false" debug="true">
+      <includesfile name="scripts/src-libcore.txt"/>
+      <includesfile name="scripts/src-junit.txt"/>
+      <src path="src/libcore/dalvik/src/main/java"/>
+      <src path="src/libcore/json/src/main/java"/>
+      <src path="src/libcore/luni/src/main/java/"/>
+      <src path="src/libcore/xml/src/main/java"/>
+      <src path="src/libcore/junit/src/main/java"/>
+      <src path="src/mockbase"/>
+    </javac>
+  </target>
+  <target name="bouncycastle" depends="init,libcore">
+    <javac destdir="out" includeAntRuntime="false" debug="true">
+      <includesfile name="scripts/src-bouncycastle.txt"/>
+      <src path="src/bouncycastle/src/main/java"/>
+    </javac>
+  </target>
+  <target name="external" depends="init,libcore">
+    <javac destdir="out" includeAntRuntime="false" debug="true">
+      <includesfile name="scripts/src-external.txt"/>
+      <src path="src/external/apache-http/src"/>
+      <src path="src/external/nist-sip/java"/>
+      <src path="src/external/tagsoup/src"/>
+    </javac>
+  </target>
+  <target name="base" depends="libcore,bouncycastle,external">
+    <javac destdir="out" includeAntRuntime="false" debug="true">
+      <includesfile name="scripts/src-base.txt"/>
+      <includesfile name="scripts/src-basegen.txt"/>
+      <includesfile name="scripts/src-policy.txt"/>
+      <includesfile name="scripts/src-mock.txt"/>
+      <includesfile name="scripts/src-mockbase.txt"/>
+      <src path="src/base/core/config/debug"/>
+      <src path="src/base/core/java"/>
+      <src path="src/base/graphics/java"/>
+      <src path="src/base/keystore/java"/>
+      <src path="src/base/location/java"/>
+      <src path="src/base/media/java"/>
+      <src path="src/base/opengl/java"/>
+      <src path="src/base/sax/java"/>
+      <src path="src/base/telephony/java"/>
+      <src path="src/base/voip/java"/>
+      <src path="src/base/vpn/java"/>
+      <src path="src/base/wifi/java"/>
+      <src path="src/base-gen/res"/>
+      <src path="src/base-gen/core/java"/>
+      <src path="src/base-gen/location/java"/>
+      <src path="src/base-gen/media/java"/>
+      <src path="src/base-gen/telephony/java"/>
+      <src path="src/base-gen/voip/java"/>
+      <src path="src/base-gen/vpn/java"/>
+      <src path="src/base-gen/wifi/java"/>
+      <src path="src/base/policy/src"/>
+      <src path="src/base/test-runner/src"/>
+      <src path="src/mockbase"/>
+    </javac>
+  </target>
+  <target name="service" depends="base">
+    <javac destdir="out" includeAntRuntime="false" debug="true">
+      <includesfile name="scripts/src-service.txt"/>
+      <src path="src/base/services/java"/>
+      <src path="src/base-gen/service"/>
+    </javac>
+  </target>
+
+  <target name="supportv4" depends="base">
+    <javac destdir="out" includeAntRuntime="false" debug="true">
+        <includesfile name="scripts/src-android-support-v4.txt"/>
+        <src path="src/android-support-v4/src"/>
+    </javac>
+  </target>
+  
+  <target name="init">
+    <mkdir dir="out"/>
+  </target>
+  <target name="clean">
+    <delete dir="out"/>
+  </target>
+</project>

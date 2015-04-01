@@ -1,0 +1,43 @@
+{
+  "name": "fan2fan",
+  "description": "bower components for fan2fan UI.",
+  "dependencies": {
+    "jquery": "2.0.0",
+    "bootstrap": "~3.1",
+    "font-awesome": "4.1.0",
+    "jquery-steps": "~1.0.7",
+    "dropzone": "~3.10.2",
+    "bootstrap-3-datepicker": "~1.3.0",
+    "jquery-validation": "~1.12.0",
+    "jquery-file-upload": "~9.5.8",
+    "unveil": "~1.3.0",
+    "html5sortable": "*",
+    "select2": "~3.5.0"
+  },
+  "overrides": {
+    "jquery": {
+      "ignore": [
+        "*.json"
+      ]
+    },
+    "bootstrap": {
+      "ignore": [
+        "js/**",
+        "img/**",
+        "less/**",
+        "docs/build/**",
+        "docs/examples/**",
+        "docs/templates/**",
+        "docs/*.html"
+      ]
+    },
+    "font-awesome": {
+      "ignore": [
+        "css/**",
+        "less/**",
+        "scss/**",
+        "src/**"
+      ]
+    }
+  }
+}

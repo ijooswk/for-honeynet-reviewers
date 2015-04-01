@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>PersonalInfomation</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet/base.1.0.gb2312.css" />
+	<link rel="stylesheet" type="text/css" href="stylesheet/common.css" />
+</head>
+<body>
+	<div class="wrap udv-clearfix">
+		<div class="navBar udv-clearfix">
+			<ul class="udv-clearfix">
+				<li style="background-position:0px 0px;"><a href="#" target="_blank">Language</a></li>
+				<li style="border:none;margin:0;background-position:-75px -168px;"><a href="#" target="_blank">Login/Sign Up</a></li>
+			</ul>
+		</div>
+		<div class="subNavWrapper udv-clearfix">
+			<h1 class="fl"><a href="#">Bnand</a></h1>
+			<div class="searchWrapper fl">
+				<div class="searchArea fl">
+					<a href="javascript:;" class="searchBtn fl"></a>
+					<div class="searchSt fl">
+						<div class="searchStA">Tupe</div>
+					</div>
+				 <input class="txtSearch fl"  type="text" value="World Cup">
+				</div>
+				<a href="javascript:;" class="col-b fl">Advanced</a>
+			</div>
+			<ul class="subNav fr">
+				<li><a href="#">Navltem</a></li>
+				<li><a href="#">Navltem</a></li>
+				<li><a href="#">Navltem</a></li>
+				<li><a href="#">Navltem</a></li>
+				<li><a href="#">Navltem</a></li>
+			</ul>
+		</div>
+
+		<div id="AccountSetup">
+			<div class="setuplist reginfo">
+				<div class="title">Account setup</div>
+				<ul>
+					<li>Personal information</li>
+					<li>Head & Video</li>
+					<li>Fans Club</li>
+				</ul>
+				<div class="horizontalrule"></div>
+				<ul>
+					<li class="stressed selected yellow">Registration information</li>
+					<li class="stressed">Cridit certification</li>
+					<li>Account security</li>
+				</ul>
+				<div class="horizontalrule"></div>
+			</div>
+			<div class="detail reginfo">
+				<div class="title stressed">Registration Information</div>
+				<div class="horizontalrule"></div>
+				<div class="subregion">
+					<div>
+						<span class="subtitle">Contact Information</span>
+						<span class="closebtn">Close</span>
+					</div>
+					<div class="horizontalrule" style="margin-bottom: 5px"></div>
+					<div style="text-align:center;font-size:8px;color:#717171;">Registration information making each landing and credit rating, the site only as credit rating is not released to the public.</div>
+					<div class="infolist udv-clearfix">
+						<ul class="infoitem">
+							<li class="itemname">*Email Address/</li>
+							<li><input type="" class="inputbox" id="email"/></li>
+							<li class="icon"><img src="images/email.png" alt=""></li>
+						</ul>
+						<ul class="infoitem">
+							<li class="itemname">*Mobile Number/</li>
+							<li><input type="" class="inputbox" id="mobile"/></li>
+							<li class="icon"><img src="images/mobile.png" alt=""></li>
+						</ul>
+					</div>
+					<div class="btns">
+						<button>Storage</button>
+						<button>Publish</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+        <div class="f_wrap">
+            <div class="f_top">COPYRIGHT(C) VIP F2F 2014</div>
+                <div class="f_bottom udv-clearfix">
+                    <div class="fb_left">
+                        <p>img</p>
+                        <ul class="udv-clearfix">
+                            <li style="padding-left:0;"><a href="#" target="_blank">About</a></li>
+                            <li><a href="#" target="_blank">Contact</a></li>
+                            <li style="border:none;" target="_blank"><a href="#">Sitemap</a></li>
+                        </ul>
+                    </div>
+                    <div class="fb_right">
+                        <p>Cum sociis natocue penatibus et magnis dis parturient montes,nascetur</p>
+                        <p>ridiculus mus.Donec llamcorpernulla non metus auctor.Cum sociis</p>
+                        <p>natoque penatibus et magnis dis parturient montes,nascetur ridiculus mus</p>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript">
+    console.log("script");
+    $(document).ready(function(){
+        var basicUrl = "http://54.186.208.46:8080/";
+        var uid = getUrlParam("uid");
+        console.log(uid);
+        $.ajax({
+            url: basicUrl + "account/" + uid,
+            crossDomain: true,
+            success: function(data) {
+                $("#mobile").val(data.phone);
+                $("#email").val(data.email);
+            },
+            error: function(data) {
+                alert("数据获取失败，请重试！");
+            }
+        })
+
+        $("#storage").click(function() {
+            sentData = {
+                phone: $("#mobile").val(),
+                email: $("#email").val(),
+            }
+            $.ajax({
+                url: basicUrl + "account/" + uid,
+                crossDomain: true,
+                data: sentData,
+                success:function(data) {
+                    if (data.result == "success")
+                        alert("提交成功！");
+                    else
+                        alert("提交失败，请重试！");
+                },
+                error: function(data) {
+                    alsert("提交失败，请重试！");
+                }
+            })
+        })
+    	
+
+    })
+
+    </script>    
+</body>
+</html>

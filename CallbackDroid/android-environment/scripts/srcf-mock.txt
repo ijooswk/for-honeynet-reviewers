@@ -1,0 +1,9 @@
+base/test-runner/src/android/test/mock/MockIContentProvider.java
+base/test-runner/src/android/test/mock/MockCursor.java
+base/test-runner/src/android/test/mock/MockApplication.java
+base/test-runner/src/android/test/mock/MockResources.java
+base/test-runner/src/android/test/mock/MockContentProvider.java
+base/test-runner/src/android/test/mock/MockContentResolver.java
+base/test-runner/src/android/test/mock/MockContext.java
+base/test-runner/src/android/test/mock/MockDialogInterface.java
+base/test-runner/src/android/test/mock/MockPackageManager.java

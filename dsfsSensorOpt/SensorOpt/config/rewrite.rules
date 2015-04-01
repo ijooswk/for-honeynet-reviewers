@@ -1,0 +1,13 @@
+# rule format:
+
+    # insert instructions after where the code matches regular expression
+    # INSERT    <regex> <new instructions>
+
+    # replace instruction with new ones
+    # REPLACE   <regex> <new instructions>
+
+    # delete instructions
+    # delete instructions which match the regular expression
+    # DELETE    <regex>
+
+# here begins the rules

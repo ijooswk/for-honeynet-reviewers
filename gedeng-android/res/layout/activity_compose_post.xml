@@ -1,0 +1,52 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout_background"
+            android:layout_width="fill_parent"
+            android:layout_height="360dp"
+            android:background="#696969" >
+
+            <EditText
+                android:id="@+id/editText_postText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:background="#7F000000"
+                android:hint="@string/hint_edit_text_compose_blog"
+                android:maxLines="3"
+                android:padding="10dp"
+                android:singleLine="false"
+                android:textColor="#FFFFFF"
+                android:textCursorDrawable="@null" >
+            </EditText>
+
+            <ImageView
+                android:id="@+id/imageView_camera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_camera" />
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/editText_tags"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/relativeLayout_background"
+            android:layout_margin="20dp"
+            android:hint="@string/hint_edit_text_add_tags"
+            android:padding="10dp"
+            android:singleLine="true" />
+    </RelativeLayout>
+
+</ScrollView>

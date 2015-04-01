@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/HTMLHead :: headTag('Create Your Package')">
+  <meta charset="UTF-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <title>Fan2Fan</title>
+
+  <!-- Replace the relative path of resources if needed. -->
+  <link href="../static/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
+  <link href="../static/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+  <link href="../static/lib/jquery-steps/demo/css/jquery.steps.css" rel="stylesheet"/>
+  <link href="../static/lib/dropzone/downloads/css/dropzone.css" rel="stylesheet"/>
+  <link href="../static/css/common.css" rel="stylesheet"/>
+  <link href="../static/css/package.css" rel="stylesheet"/>
+
+  <script src="../static/lib/jquery/jquery.min.js"></script>
+  <script src="../static/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="../static/lib/jquery-steps/build/jquery.steps.min.js"></script>
+  <script src="../static/lib/dropzone/downloads/dropzone.min.js"></script>
+
+  <!-- Init Module -->
+  <script src="../static/js/init.js"></script>
+  <!-- Module Definition -->
+  <script src="../static/js/pages/editPackage.js"></script>
+
+  <!-- Load Module -->
+  <script src="../static/js/loader.js"></script>
+
+</head>
+<body>
+
+<!-- Header of Page-->
+<div id="header" class="navbar navbar-default navbar-static-top" role="navigation"
+     th:replace="fragments/Header :: header">
+  <div class="nav-container">
+    <div class="navbar-collapse collapse">
+      <div class="navbar-brand">Fan2Fan</div>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown" th:if="${session.user != null}">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+             th:href="@{/users/edit/}"
+             th:text="${session.user.firstName}">Ruici Luo<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Your Trips</a></li>
+            <li><a href="#">Invite Your Friends</a></li>
+            <li><a href="#">Account Settings</a></li>
+            <li class="nav-divider"></li>
+            <li><a href="#">Log out</a></li>
+            <li></li>
+          </ul>
+        </li>
+        <li class="divider"></li>
+        <li th:if="${session.user != null}">
+          <a href="#"><i class="fa fa-envelope-o"></i></a>
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            LANGUAGE <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="#">English</a></li>
+            <li><a href="#">中文（简体）</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Page Body Here, replace the id attr of following div -->
+<div id="Page Name Here" class="container" data-page-name="">
+</div>
+
+<div id="footer" th:replace="fragments/Footer :: footer">
+  <nav class="navbar navbar-default">
+    <div class="navbar-inner navbar-content-center container">
+      <p class="text-muted credit">© Fan2Fan Group 2014</p>
+    </div>
+  </nav>
+</div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_gravity="center"
+        android:background="@color/white"
+        android:padding="10dp">
+
+        <TextView 
+            android:id="@+id/textView_loadMoreHint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/xlistview_header_hint_normal"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+

@@ -1,0 +1,15 @@
+junit/framework/TestResult.java
+junit/framework/TestListener.java
+junit/framework/ComparisonFailure.java
+junit/framework/TestSuite.java
+junit/framework/Assert.java
+junit/framework/Test.java
+junit/framework/TestFailure.java
+junit/framework/Protectable.java
+junit/framework/TestCase.java
+junit/framework/AssertionFailedError.java
+junit/extensions/RepeatedTest.java
+junit/extensions/TestSetup.java
+junit/extensions/ExceptionTestCase.java
+junit/extensions/ActiveTestSuite.java
+junit/extensions/TestDecorator.java

@@ -1,0 +1,38 @@
+div#login-signup {
+    height: 100%;
+}
+
+div#login-signup div.wrapper {
+    position: relative;
+    top: 50%;
+    margin-top: -240px;
+}
+
+div#login-signup form {
+    margin: auto;
+    width: 280px;
+}
+
+div#signup {
+    border-left-style: solid;
+}
+
+div#login-signup .form-control {
+    position: relative;
+    height: auto;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+}
+
+div#login-signup form button {
+    margin: 10px 0;
+    padding: 0 16px;
+    border-radius: 2px;
+    box-sizing: border-box;
+    border: 0;
+    line-height: 44px;
+    font-size: 16px;
+    width: 45%;
+    margin-right: 5%;
+}

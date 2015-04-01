@@ -1,0 +1,52 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="40dp" >
+
+        <EditText
+            android:id="@+id/editText_telephone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/login_input_phone_number"
+            android:inputType="phone"
+            android:padding="10dp" />
+
+        <EditText
+            android:id="@+id/editText_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editText_telephone"
+            android:layout_marginTop="10dp"
+            android:inputType="textPassword"
+            android:hint="@string/login_input_password"
+            android:padding="10dp" />
+
+        <TextView
+            android:id="@+id/textView_forgetPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/button_login"
+            android:layout_below="@+id/editText_password"
+            android:background="@color/transparent"
+            android:padding="5dp"
+            android:text="@string/login_forget_password"
+            android:textColor="@color/gray"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/button_login"
+            android:layout_width="fill_parent"
+            android:layout_height="48dp"
+            android:layout_below="@id/textView_forgetPassword"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_bg_selector"
+            android:text="@string/login_login"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+
+</ScrollView>

@@ -1,0 +1,202 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Login</title>
+<link rel="stylesheet" href="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/css/bootstrap.min.css">
+<script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<link href="asset/css/login.css" rel="stylesheet">
+<link href="asset/css/f2f.css" rel="stylesheet">
+<script>
+</script>
+</head>
+
+<body>
+<div id="panel">
+<div id="menu">
+<ul id="menu_list" class="floatright" style="margin-right: 30px;">
+  <li style="border:none;"><a id="language_nav" href="#">Language</a></li>
+  <li><a id="login_signup_nav" href="#">Login/Sign up</a></li>
+</div>
+<div>
+  <hr class="hr1">
+</div>
+<div id="content">
+  <div id="nav_content"> <img id="brand" src="asset/img//login/Brand.gif">
+    <div id="menu">
+      <ul id="menu_list" class="floatright" style="margin-right: 30px; margin-top: 10px;">
+        <li style="border:none;"><a href="#">NavItem</a></li>
+        <li><a href="#">NavItem</a></li>
+        <li><a href="#">Navitem</a></li>
+        <li><a href="#">Navitem</a></li>
+        <li><a href="#">Navitem</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="middle" class="chartcolumn2">
+    <div class="chart floatleft" style="margin-top:50px;">
+    <img src="asset/img//login/login.png">
+    <div class="charttop"></div>
+    <div class="chartbody">
+      <input id="loginemail" class="charttext" type="text" placeholder="Email">
+      <input id="loginpwd" class="charttext" type="password" placeholder="Password">
+      <div class="chartlabel">
+        <input id="loginremember" type="checkbox" style="margin-left:5px;">
+        <label>Remember me</label>
+        <label style="margin-left:40px;"><a>Forgot Password?</a></label>
+      </div>
+    </div>
+    <div class="chartbottom"></div>
+    <button id="loginBtn"></button>
+  </div>
+  <div class="chart floatright">
+    <img src="asset/img//login/signup.png">
+    <button id="Weibo"></button>
+    <button id="Google"></button>
+    <div class="charttop"></div>
+    <div class="chartbody">
+      <input id="signupinvitation" class="charttext" type="text" placeholder="Invitation Code">
+      <input id="signupusername" class="charttext" type="text" placeholder="User name">
+      <input id="signuppwd" class="charttext" type="password" placeholder="Password">
+      <input id="signuppwd2" class="charttext" type="password" placeholder="Password Confirmation">
+      <input id="signupemail" class="charttext" type="text" placeholder="Email address / Phone">
+      <div class="chartlabel">
+      <input id="signupcaptcha" class="shortcharttext" type="text" placeholder="Captcha">
+      <span>
+        <img id="signupcaptchaimg" class="captchaimg" src="" alt="Click to refresh">
+      </span>
+      </div>
+    </div>
+    <div class="chartbottom"></div>
+    <div class="chartlabel">
+      <input id="signupnotify" type="checkbox" name="">
+      <label>Tell me about XXX news</label>
+    </div>
+    <button id="signBtn"></button>
+  </div>
+  </div>
+</div>
+</div>
+<div id="foot">
+    <div id="footContent">
+	<div id="words">
+    <p style="font: 80% Arial, Helvetica, sans-serif; font-size:16px; color:rgba(255,255,255,1.00)" >lalalllalalalal</p>
+    <p style="font: 80% Arial, Helvetica, sans-serif; font-size:12px; color:rgba(255,255,255,1.00); margin-top:10px" >lalalllalalalalalalalalalalalalalalalalalal<br>lalallalalalalalalalalalalalallalalallalal</p>
+	</div>
+    <img id="ball" src="asset/img//login/foot_ball.gif">
+    <div id="moreMenu">
+      <ul class="nav_list">
+        <li><a href="#" class="a4"><label>About</label></a></li>
+        <li style="border-left:1px solid #99e5a8;"><a href="#" class="a4"><label>Contact</label></a></li>
+        <li style="border-left:1px solid #99e5a8;" ><a href="#" class="a4"><label>Sitemap</label></a></li>
+      </ul>
+    </div>
+    </div>
+</div>
+<script type="text/javascript">
+    console.log("script");
+    function getUrlParam(name) {
+      var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+      var r = window.location.search.substr(1).match(reg);
+      if (r != null) 
+        return unescape(r[2]); 
+      return null;
+    }
+
+    $(document).ready(function(){
+        var basicUrl = "http://54.213.115.194/";
+        $.ajax({
+            url: basicUrl + "account/signin",
+            type: 'GET',
+            crossDomain: true,
+            success:function(data) {
+                if (data.result == "success"){
+                    alert('already signed in as uid:' + data.uid);
+                    window.location.href = "../profile/show/index.html";
+                }
+                else alert(data.result);
+            },
+            error: function(data) {
+                alert(data+"提交失败，请重试！");
+            }
+        })
+        $("#loginBtn").click(function() {
+            sentData = {
+                email: $("#loginemail").val(),
+                password: $("#loginpwd").val(),
+                remember: $("#loginremember").is(':checked'),
+            }
+            $.ajax({
+                url: basicUrl + "account/signin",
+                type: 'POST',
+                crossDomain: true,
+                dataType: 'json',
+                data: sentData,
+                success:function(data) {
+                    if (data.result == "success")
+                        window.location.href = "../profile/show/index.html";
+                    else if (data.result == "validation_error"){
+                        alert(data.result + ":" + data.reason);
+                    }
+                    else alert(data.result);
+                },
+                error: function(data) {
+                    alert(data+"提交失败，请重试！");
+                }
+            })
+        })
+
+        $("#signBtn").click(function() {
+            sentData = {
+                invitation: $("#signupinvitation").val(),
+                notifiable: $("#signupnotify").is(':checked'),
+                captcha: $("#signupcaptcha").val(),
+                username: $("#signupusername").val(),
+                email: $("#signupemail").val(),
+                password: $("#signuppwd").val(),
+                //password2: $("#signuppwd2").val()
+            }
+            $.ajax({
+                url: basicUrl + "account/invite/signup",
+                type: 'POST',
+                crossDomain: true,
+                dataType: 'json',
+                data: sentData,
+                success:function(data) {
+                    if (data.result == "success")
+                        alert(date.result);
+                        //window.location.href = "../profile/edit/PersonalInfo.html";
+                    else if (data.result == "validation_error") {
+                        alert(data.result + ":" + data.reason);
+                    }
+                    else
+                        alert(data.result);
+                },
+                error: function(data) {
+                    alert("提交失败，请重试！");
+                }
+            })
+        })
+
+        $("#signupcaptchaimg").click(function() {
+            $.ajax({
+                url: basicUrl + "captcha/new",
+                type: 'GET',
+                crossDomain: true,
+                success:function(data) {
+                    $("#signupcaptchaimg").attr("src", data.captcha);
+                },
+                error: function(data) {
+                    alert("提交失败，请重试！");
+                }
+            })
+        })
+      
+
+    })
+
+</script>  
+</body>
+</html>

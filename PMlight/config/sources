@@ -1,0 +1,28 @@
+# DEFAULT API LIST
+# All methods of ContentResolver
+Landroid/content/ContentResolver;->query
+
+# App List
+Landroid/content/pm/PackageManager;->getInstalledApplications
+Landroid/content/pm/PackageManager;->getInstalledPackages
+Landroid/content/pm/PackageManager;->queryIntentActivities
+
+# TelephonyManager
+Landroid/telephony/TelephonyManager;->getLine1Number
+Landroid/telephony/TelephonyManager;->getCellLocation
+Landroid/telephony/TelephonyManager;->getDeviceId
+
+# Location
+Landroid/location/LocationManager;->requestLocationUpdates
+Landroid/location/LocationManager;->getLastKnownLocation
+
+# Wifi
+Landroid/net/wifi/WifiManager;->getScanResults
+Landroid/net/wifi/WifiManager;->getConnectionInfo
+
+# Sensor
+Landroid/hardware/SensorManager;->registerListener
+
+# reflect
+# Ljava/lang/reflect/Method;->invoke
+

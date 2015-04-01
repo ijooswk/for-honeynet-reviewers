@@ -1,0 +1,237 @@
+
+/*slideShow begin*/
+img{border:0}
+#slideshow{position: relative;height: 384px;width: 1024px;margin: 0 auto;}
+#slideshow a{float: left;display: inline;}
+#slideshow .img{position: absolute;width: 1024px;height: 384px;overflow: hidden}
+#slideshow .img span{position: absolute;width: 19999px;display: block}
+#slideshow .btns{z-index: 10;position: absolute;width: 1024px}
+#slideshow .btns b{position: absolute;width: 100px;display: block;height: 14px;overflow: hidden;top: 350px;right: 5%}
+#slideshow .btns b i{width: 10px;background: #fff;opacity: 0.5;filter: alpha(opacity=50);-moz-opacity: 0.5;-khtml-opacity: 0.5;float: left;height: 10px;font-size: 0px;overflow: hidden;cursor: pointer;margin-right: 6px;}
+#slideshow .btns b i:hover{opacity: 1;filter: alpha(opacity=100);-moz-opacity: 1;-khtml-opacity: 1;}
+#slideshow .btns b i.on{background: #fff;opacity: 1;filter: alpha(opacity=100);-moz-opacity: 1;-khtml-opacity: 1;cursor: default}
+#slideshow .btns b i.on:hover{opacity: 1;filter: alpha(opacity=100);-moz-opacity: 1;-khtml-opacity: 1;cursor: default}
+#slideshow .btns s{position: absolute;width: 50px;display: none;height: 85px;overflow: hidden;top: 150px;cursor: pointer}
+#slideshow .btns s i{position: absolute;width: 50px;background: url(../images/markers.png);height: 160px;_filter: progid: dximagetransform.microsoft.alphaimageloader(enabled=true, sizingmethod=scale, src="images/markers.png");_background: none;}
+#slideshow .btns s.prev{left: 20px}
+#slideshow .btns s.prev i{background-position: 0 -30px}
+#slideshow .btns s.next{right: 20px}
+#slideshow .btns s.next i{background-position: 0 -115px;}
+.slideshow-hover#slideshow .btns s{display: block}
+/*.paging{opacity: 0.5;filter: alpha(opacity=50);-moz-opacity: 0.5;-khtml-opacity: 0.5;height: 384px;position: absolute;background: #000;overflow: hidden}*/
+.wtit .info,.wtit .tit{float: left;}
+.wtit .info{padding: 35px 0 0 20px;color: #989898;}
+.wtit .info span{margin: 0 8px;}
+
+
+#slideshow .subNavbar{
+    position: absolute;
+    width: 954px;
+    padding: 20px 35px;
+}
+#slideshow .subNavbar .logo{
+    float:left;
+}
+#slideshow .subNavbar ul{
+    float:right;
+    padding-top: 15px;
+}
+#slideshow .subNavbar ul li{
+    float:left;
+    padding:0 10px;
+    border-right: 1px solid #fff;
+}
+#slideshow .subNavbar ul li a{
+    text-decoration: none;
+    color:#fff;
+}
+#slideshow .subNavbar ul li a:hover{
+    text-decoration: underline;
+}
+
+#slideshow .slogan{
+    position: absolute;
+    width:1024px;
+    top:90px;
+    color:#fff;
+    text-align: center;
+}
+#slideshow .slogan p.tit{
+    font-size: 36px;
+    font-weight: bold;
+    width:500px;
+    margin:auto;
+    line-height: 1.5em;
+}
+#slideshow .slogan p.txt{
+    font-size: 12px;
+    width:500px;
+    margin:auto;
+}
+
+#search_box{
+    position: absolute;
+    width:1024px;
+    bottom:140px;
+	*bottom:100px;
+}
+
+/*basic*/
+.searchTool{position: relative;width:480px;height:50px;margin:auto;background:#fff;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px}
+.searchTool .radio{vertical-align:middle;margin-left:10px;margin-right:2px;*margin-right:0;}
+.searchTool .txtSearch{float: left;width: 280px;padding: 5px 15px;height: 40px;line-height: 40px;vertical-align: bottom;border: none;font-size: 16px;}
+.searchTool .selSearch{float:left;width:115px;background:#fff;height:50px;border-right: 1px solid #bdbdbd;margin-left: 5px;}
+.searchTool .nowSearch{float:left;width:68px;text-align:center;height:50px;line-height:50px;overflow:hidden;padding-left:5px;font-size: 20px;}
+.searchTool .btnSel{float: right;border-left: 1px solid #bdbdbd;width: 30px;height: 30px;margin: 10px auto;}
+.searchTool .btnSel a{border: 10px solid #fff;border-top-color: #bdbdbd;border-top-width: 15px;background: #fff;width: 0px;height: 0px;margin: 10px 5px;}
+.searchTool .btnSel a:hover{border: 10px solid #fff;border-top-color: #717171;border-top-width: 15px;background: #fff;width: 0px;height: 0px;margin: 10px 5px;}
+.searchTool .selOption{z-index:9999;position:absolute;top: 46px;left: 0px;font-size: 20px;width:88px;background:#fff;border:1px solid #bdbdbd;}
+.searchTool .selOption li{border-bottom:1px solid #bdbdbd;}
+#slideshow .searchTool .selOption li a{display:block;float:none;text-align: center;padding:10px;height:20px;line-height:20px;color:#000;text-decoration:none;}
+#slideshow .searchTool .selOption li a:hover{color:#fff;background:#717171;}
+.searchTool .btnSearch{float:left;width:35px;height:50px;border-left:1px solid #bdbdbd;overflow:hidden;}
+.searchTool .btnSearch a{background:url(../images/searchBtn.jpg) no-repeat center center;display:block;width:40px;height:50px;overflow:hidden;}
+.searchTool .btnSearch a:hover{background:url(../images/searchBtn.jpg) no-repeat center center;width:40px;height:50px;}
+
+
+/*slideShow end*/
+
+/*teamShow begin*/
+.teamShow{
+    height: 112px;
+    padding:50px 40px 10px;
+    background: url(../images/blk_bg.png) repeat-x;
+}
+.teamShow ul{
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 90px;
+    scrollbar-face-color:#70807d;
+    scrollbar-arrow-color:#ffffff;
+    scrollbar-highlight-color:#ffffff;
+    scrollbar-3dlight-color:#70807d;
+    scrollbar-shadow-color:#ffffff;
+    scrollbar-darkshadow-color:#70807d;
+    scrollbar-track-color:#ffffff
+}
+.teamShow ul::-webkit-scrollbar-track-piece{
+    background-color:#d7d7d7;/*滚动条的背景颜色*/
+    -webkit-border-radius:2px;/*滚动条的圆角宽度*/
+}
+.teamShow ul::-webkit-scrollbar{
+    width:4px;/*滚动条的宽度*/
+    height:8px;/*滚动条的高度*/
+}
+.teamShow ul::-webkit-scrollbar-thumb:vertical{/*垂直滚动条的样式*/
+    height:8px;
+    background-color:#808080;
+    -webkit-border-radius:4px;
+}
+
+.teamShow ul li{
+    float: left;
+    margin-right: 200px;
+    margin-bottom: 20px;
+}
+.teamShow ul li a{
+    display: block;
+    width:32px;
+    height:32px;
+    background: url(../images/sampleTeam.jpg) no-repeat center center;
+}
+/*teamShow end*/
+
+/*block_links begin*/
+.block_links p{
+    width:545px;
+    margin:15px auto;
+    text-align: center;
+}
+.block_links p.tit{
+    color:#8a8a8a;
+    font-size: 26px;
+    font-weight: bold;
+}
+.block_links p.txt{
+    color:#a4a4a4;
+    margin-bottom: 25px;
+}
+.block_links ul{
+    padding:0 40px;
+    background: url(../images/blk_bg.png) repeat-x;
+    height:175px;
+}
+.block_links ul li{
+    float:left;
+    width:302px;
+    margin-right: 19px;
+}
+.block_links ul li .recommends{
+    position: relative;
+}
+.block_links ul li img{
+    display: block;
+    width:300px;
+    height:120px;
+    border:1px solid #bfbcb6;
+}
+.block_links ul s{
+    display: block;
+    position: absolute;
+    width:30px;
+    height:40px;
+    top:0px;
+    left:20px;
+    background: url(../images/markers.png) no-repeat;
+}
+.block_links ul s.v_star{
+     background-position:  0px -250px;
+}
+.block_links ul s.s_star{
+    background-position:  -30px -250px;
+}
+.block_links ul li p.links{
+    position: absolute;
+    bottom:2px;
+    right:5px;
+    font-size: 12px;
+    margin:0;
+    width:auto;
+}
+.block_links ul li p.links a{
+    color:#fff;
+    text-decoration: none;
+}
+.block_links ul li p.links a:hover{
+     text-decoration: underline;
+ }
+.block_links ul li p.comments{
+    width: auto;
+    margin:5px auto;
+    text-align: left;
+}
+.block_links ul li p.comments a{
+    text-decoration: none;
+    color: #8a8a8a;
+    font-size: 16px;
+    font-weight: bold;
+}
+.block_links ul li p.comments a:hover{
+    text-decoration: underline;
+}
+.btm{
+    padding:20px 140px;
+    height:40px;
+    text-align: center;
+    color:#8a8a8a;
+    font-size:16px;
+}
+.btm span{
+    float:left;
+    line-height: 40px;
+    height: 40px;
+	*width:210px;
+    margin: 0 5px;
+}
+/*block_links end*/
+

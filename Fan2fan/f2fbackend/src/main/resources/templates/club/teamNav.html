@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <title>Team Account Nav | Fan2Fan</title>
+  <link rel="stylesheet" href="../../static/css/Nclub/reset.css"/>
+  <link rel="stylesheet" href="../../static/css/Nclub/styleFor1.css"/>
+</head>
+<body>
+<div class="leftWrapper fl" th:fragment="teamNav">
+  <div class="leftTop">
+    <h2>Account Setup</h2>
+    <hr/>
+  </div>
+  <div>
+    <a th:href="@{'/teams/'+${teamCommand.id}+'/'}">
+      <img th:src="@{${logoUrl}}" width="200" height="220"  />
+    </a>
+  </div>
+  <ul class="leftNav clearfix">
+    <li th:classappend="${nav == 'edit' ? 'selected' : ''}">
+      <a th:href="@{'/teams/'+${teamCommand.id}+'/edit/'}">Club Information</a>
+    </li>
+    <li th:classappend="${nav == 'players' ? 'selected' : ''}">
+      <a th:href="@{'/teams/'+${teamCommand.id}+'/players/'}">Team badge/Player List</a>
+    </li>
+    <li><a href="#">Video</a></li>
+    <li><a href="#">Match Calendar</a></li>
+  </ul>
+</div>
+</body>
+</html>

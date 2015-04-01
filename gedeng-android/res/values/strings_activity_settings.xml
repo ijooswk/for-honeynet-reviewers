@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_activity_settings">系统设置</string>
+    <string name="settings_feedback">意见反馈</string>
+    <string name="settings_notify">消息设置</string>
+    <string name="settings_version">版本号</string>
+    <string name="notify_liked">有人赞了我发的咯噔</string>
+    <string name="notify_commented">有人给我发了评论</string>
+    <string name="notify_followed">有人关注了我的咯噔</string>
+    <string name="notify_hint">关闭后，将接收不到手机的推送通知，但在应用内仍会收到消息</string>
+</resources>

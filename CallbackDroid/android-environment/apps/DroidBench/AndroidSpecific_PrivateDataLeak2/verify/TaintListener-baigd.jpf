@@ -1,0 +1,8 @@
+target = de.ecspride.Driver
+#classpath = /home/atp/build/jpf/jpf-core/build/jpf-classes.jar:/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.25/jre/lib/rt.jar:/home/atp/app/android-jvm-lib/out:../bin/classes:.
+#classpath = /home/baigd/workspace/jpf-core/build/jpf-classes.jar:/usr/lib/jvm/java-7-openjdk-i386/jre/lib/rt.jar:/home/baigd/Android/android-jvm-lib/out:/home/baigd/Android/android-jvm-lib/apps/stealpb/src/:. 
+#classpath = /home/jl/jpf/jpf-core/build/jpf-classes.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/rt.jar:/home/jl/android-jvm-lib/out:/home/jl/android-jvm-lib/apps/DroidBench/AndroidSpecific_PrivateDataLeak1/bin:. 
+classpath = /home/baigd/workspace/jpf-core/build/jpf-classes.jar:/usr/lib/jvm/java-7-openjdk-i386/jre/lib/rt.jar:/home/baigd/Android/android-jvm-lib/out:/home/baigd/Android/android-jvm-lib/apps/DroidBench/AndroidSpecific_Library2/bin:.
+
+listener+=,TaintListener
+#listener+=,MethodListener

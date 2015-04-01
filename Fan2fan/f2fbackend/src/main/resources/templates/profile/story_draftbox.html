@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="keywords" content="fan,football"/>
+  <meta name="description" content="fan2fan"/>
+  <meta charset="utf-8"/>
+  <title>PersonFile</title>
+  <link rel="stylesheet" type="text/css" href="../../static/css/profile/base.1.0.gb2312.css"/>
+  <link rel="stylesheet" type="text/css" href="../../static/css/profile/common.css"/>
+  <link rel="stylesheet" type="text/css" href="../../static/css/profile/personFile.css"/>
+  <link rel="stylesheet" type="text/css" href="../../static/css/profile/story_item.css">
+  <script type="text/javascript" src="../../static/js/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="../../static/js/ajax.js"></script>
+
+  <script type="text/javascript">
+	$(document).ready(function() {
+		$(".story_checkbox").click(function() {
+		    $(this).parent().parent().toggleClass("selected");
+		});
+        $(".story_starBtn").click(function() {
+		    $(this).toggleClass("selected");
+            //todo: save status on server
+		});
+
+        $("#delBtn").click(function() {
+            var nDel = 0;
+            $(".story_checkbox:checked").each(function() {
+                ++nDel;
+            });
+            
+            if (nDel==0 || !confirm("Are you sure you want to delete these "+ nDel +" storys?")) {
+                return;
+            }
+
+            $(".story_checkbox:checked").each(function() {
+                $(this).parent().parent().remove();
+                //todo: delete on server
+            });
+        });
+	});
+  </script>
+</head>
+<body>
+
+<div class="wrap">
+<div class="navBar udv-clearfix">
+  <ul class="udv-clearfix">
+    <li style="background-position:0px 0px;"><a href="#" target="_blank">Language</a></li>
+    <li style="background-position:-60px -115px;"><a href="#" target="_blank">Alert</a></li>
+    <li style="border:none;margin:0;background-position:-60px -135px;"><a href="#" target="_blank">Account</a></li>
+  </ul>
+</div>
+<div class="subNavbar udv-clearfix">
+  <div class="logo"><a href="#" target="_blank"><img src="../../static/img/LOGO_blk.png"/></a></div>
+  <div id="search_box">
+    <div class="searchTool">
+      <form method="get" action="" name="headSearchForm" id="headSearchForm" onsubmit="return dosearch(this);">
+        <div class="selSearch">
+          <div class="nowSearch" id="headSlected"
+               onclick="if(document.getElementById('headSel').style.display=='none'){document.getElementById('headSel').style.display='block';}else {document.getElementById('headSel').style.display='none';};return false;"
+               onmouseout="drop_mouseout('head');">Club1
+          </div>
+          <div class="btnSel"><a href="#"
+                                 onclick="if(document.getElementById('headSel').style.display=='none'){document.getElementById('headSel').style.display='block';}else {document.getElementById('headSel').style.display='none';};return false;"
+                                 onmouseout="drop_mouseout('head');"></a></div>
+          <div class="clear"></div>
+          <ul class="selOption" id="headSel" style="display: none;">
+            <li><a href="#" onclick="return search_show('head','video',this)" onmouseover="drop_mouseover('head');"
+                   onmouseout="drop_mouseout('head');">Club1</a></li>
+            <li><a href="#" onclick="return search_show('head','playlist',this)" onmouseover="drop_mouseover('head');"
+                   onmouseout="drop_mouseout('head');">Club2</a></li>
+            <li><a href="#" onclick="return search_show('head','user',this)" onmouseover="drop_mouseover('head');"
+                   onmouseout="drop_mouseout('head');">Club3</a></li>
+            <li><a href="#" onclick="return search_show('head','bar',this)" onmouseover="drop_mouseover('head');"
+                   onmouseout="drop_mouseout('head');">Club4</a></li>
+            <li><a href="#" onclick="return search_show('head','pk',this)" onmouseover="drop_mouseover('head');"
+                   onmouseout="drop_mouseout('head');">Club5</a></li>
+          </ul>
+        </div>
+        <input class="txtSearch" id="headq" name="q" type="text" value="World Cup"/>
+        <input name="searchdomain" type="hidden" value=""/>
+        <input id="headSearchType" name="searchType" type="hidden" value="playlist"/>
+
+        <div class="btnSearch">
+          <a href="#" onclick="javascript:return dosearch(document.getElementById('headSearchForm'));"></a>
+        </div>
+        <div class="clear"></div>
+      </form>
+    </div>
+    <script type="text/javascript" src="../../static/js/searchbox.js"></script>
+    <div class="advance_search"><a href="#" target="_blank">advance</a></div>
+  </div>
+  <ul class="udv-clearfix">
+    <li><a href="#" target="_blank">NavItem</a></li>
+    <li><a href="#" target="_blank">NavItem</a></li>
+    <li><a href="#" target="_blank">NavItem</a></li>
+    <li><a href="#" target="_blank">NavItem</a></li>
+    <li style="border:none;"><a href="#" target="_blank">NavItem</a></li>
+  </ul>
+</div>
+<div class="perFiles udv-clearfix">
+  <div class="perImg">
+    <img src="../../static/img/samplePerson.jpg"/>
+    <a href="#">To change Avatar</a>
+  </div>
+  <div class="perTxt">
+    <ul class="udv-clearfix">
+      <li><a href="#" target="_blank"><img src="../../static/img/sampleTeam.jpg"/></a></li>
+      <li><a href="#" target="_blank"><img src="../../static/img/sampleTeam.jpg"/></a></li>
+    </ul>
+    <div class="udv-clearfix">
+      <div class="nickName">Nickname</div>
+      <div class="scoreGet">
+        <p><img src="../../static/img/fullStar.jpg"/><img src="../../static/img/fullStar.jpg"/></p>
+
+        <p>100,377,020 points</p>
+        <s class="s_star" href="#"></s>
+      </div>
+    </div>
+    <p class="address">FirstName LastName from British Location 1
+      mail@server.com</p>
+
+    <p class="address">(xx)xxx xxxx xxx</p>
+
+    <p class="intro">avltem Be the first to hear what is happening at Old
+      Trafford! To sign up to the match package where you receive
+      Team Sheets, Goals, HT and FT simply text MUFC STAN to
+      60442Alerts Cost 25p per text alertMatch information such as
+      goal alerts give the full descriptions of the action ike most
+      unofficial services.Navltem Be the first to hear what is
+      happening at Old Trafford! To sign up to the match package
+      where you receive Team Sheets, Goals, HT and FT simply
+      text MUFC STAN to 60442Alerts Cost 25p per tch inform
+      such as goal alerts give the full most uno</p>
+  </div>
+  <div class="perVideo">
+    <ul class="shareBtns udv-clearfix">
+      <li><a href="#" style="background-position: 0 0;"></a></li>
+      <li><a href="#" style="background-position: -124px 0;"></a></li>
+      <li><a href="#" style="background-position: -93px 0;"></a></li>
+      <li><a href="#" style="background-position: -62px 0;"></a></li>
+      <li><a href="#" style="background-position: -31px 0;"></a></li>
+    </ul>
+    <div class="videoPlay">
+      <img src="../../static/img/sampleVideo.jpg"/>
+      <a class="info_bg" href="#">The replacement of personal video</a>
+      <a class="more_btn" href="#">More</a>
+      <a id="video_play_btn" href="#"></a>
+    </div>
+  </div>
+</div>
+<div class="tabList">
+<div class="tabTit udv-clearfix">
+  <a class="tit_s" id="m_myhome" href="#">My Home</a>
+  <a class="tit_s" id="m_irecommend" href="#">I recommend</a>
+  <a class="tit_sl" id="m_personalinfo" href="#">Personal Information</a>
+  <a class="tit_s tit_over" id="m_hotnews" href="#">Hot News</a>
+  <a class="tit_sl" id="m_traveleva" href="#">Travel Evaluation</a>
+  <a class="tit_s" id="m_more" href="#">More</a>
+</div>
+
+<div class="tabBlock">
+<div class="blk_s udv-clearfix" id="b_hotnews">
+  <div class="story_mainblk">
+    <div class="story_tabList">
+      <span class="vRule"></span>
+      <a href="story_uploaded.html">Uploaded<br/>Hot News</a>
+      <span class="vRule"></span>
+      <a href="story_msgedit.html">Edit<br/>Message</a>
+      <span class="vRule"></span>
+      <a class="tabActive"  href="story_draftbox.html">Draft Box</a>
+      <span class="vRule"></span>
+      <a href="story_release.html">Hot News<br/>Release Status</a>
+      <span class="vRule"></span>
+    </div>
+    <div class="story_funcBar">
+	  <img id="delBtn" src="../../static/img/profile/hot_news/trashbox.png" alt="" />
+    </div>
+    <ul id="story_list">
+        <li class="story_titleItem udv-clearfix">
+            <span class="fl">
+                <input type="checkbox" class="story_checkbox" />
+                <span class="story_title">The new title of the story</span>
+            </span>
+            <span class="fr">
+                <span class="story_date">May 1st, 2015</span>
+                <span class="story_starBtn"></span>
+            </span>
+        </li>
+        <li class="story_titleItem udv-clearfix">
+            <span class="fl">
+                <input type="checkbox" class="story_checkbox" />
+                <span class="story_title">The new title of the story</span>
+            </span>
+            <span class="fr">
+                <span class="story_date">May 1st, 2015</span>
+                <span class="story_starBtn"></span>
+            </span>
+        </li>
+        <li class="story_titleItem udv-clearfix">
+            <span class="fl">
+                <input type="checkbox" class="story_checkbox" />
+                <span class="story_title">The new title of the story</span>
+            </span>
+            <span class="fr">
+                <span class="story_date">May 1st, 2015</span>
+                <span class="story_starBtn"></span>
+            </span>
+        </li>
+        <li class="story_titleItem udv-clearfix">
+            <span class="fl">
+                <input type="checkbox" class="story_checkbox" />
+                <span class="story_title">The new title of the story</span>
+            </span>
+            <span class="fr">
+                <span class="story_date">May 1st, 2015</span>
+                <span class="story_starBtn"></span>
+            </span>
+        </li>
+        <li class="story_titleItem udv-clearfix">
+            <span class="fl">
+                <input type="checkbox" class="story_checkbox" />
+                <span class="story_title">The new title of the story</span>
+            </span>
+            <span class="fr">
+                <span class="story_date">May 1st, 2015</span>
+                <span class="story_starBtn"></span>
+            </span>
+        </li>
+        <li class="story_titleItem udv-clearfix">
+            <span class="fl">
+                <input type="checkbox" class="story_checkbox" />
+                <span class="story_title">The new title of the story</span>
+            </span>
+            <span class="fr">
+                <span class="story_date">May 1st, 2015</span>
+                <span class="story_starBtn"></span>
+            </span>
+        </li>
+        <li class="story_titleItem udv-clearfix">
+            <span class="fl">
+                <input type="checkbox" class="story_checkbox" />
+                <span class="story_title">The new title of the story</span>
+            </span>
+            <span class="fr">
+                <span class="story_date">May 1st, 2015</span>
+                <span class="story_starBtn"></span>
+            </span>
+        </li>
+    </ul>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+  <div class="f_wrap">
+    <div class="f_top">COPYRIGHT(C) VIP F2F 2014</div>
+    <div class="f_bottom udv-clearfix">
+      <div class="fb_left">
+        <p>img</p>
+        <ul class="udv-clearfix">
+          <li style="padding-left:0;"><a href="#" target="_blank">About</a></li>
+          <li><a href="#" target="_blank">Contact</a></li>
+          <li style="border:none;"><a href="#" target="_blank">Sitemap</a></li>
+        </ul>
+      </div>
+      <div class="fb_right">
+        <p>Cum sociis natocue penatibus et magnis dis parturient montes,nascetur</p>
+
+        <p>ridiculus mus.Donec llamcorpernulla non metus auctor.Cum sociis</p>
+
+        <p>natoque penatibus et magnis dis parturient montes,nascetur ridiculus mus</p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

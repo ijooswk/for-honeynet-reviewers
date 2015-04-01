@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="keywords" content="fan,football">
+    <meta name="description" content="fan2fan">
+    <meta charset="utf-8">
+    <title>Fan2Fan</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet/base.1.0.gb2312.css">
+    <link rel="stylesheet" type="text/css" href="stylesheet/index.css">
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script src="js/window.js" type=text/javascript></script>
+    <script src="js/scroll.js" type=text/javascript></script>
+    <script src="js/clippings.js" type=text/javascript></script>
+</head>
+<body>
+
+    <div class="wrap udv-clearfix">
+        <div class="navBar udv-clearfix">
+            <ul class="udv-clearfix">
+                <li style="background-position:0px 0px;"><a href="#" target="_blank">Language</a></li>
+                <li style="background-position:-60px -115px;"><a href="#" target="_blank">Alert</a></li>
+                <li style="border:none;margin:0;background-position:-60px -135px;"><a href="#" target="_blank">Account</a></li>
+            </ul>
+        </div>
+        <div id="slideshow" rel="auto-play">
+            <div class="img">
+                <span>
+                    <a href="#" target="_blank"><img src="images/sampleFocus.jpg" /></a>
+                    <a href="#" target="_blank"><img src="images/sampleFocus.jpg" /></a>
+                    <a href="#" target="_blank"><img src="images/sampleFocus.jpg" /></a>
+                </span>
+            </div>
+            <div class="subNavbar udv-clearfix">
+                <div class="logo"><a href="#" target="_blank"><img src="images/LOGO.png"></a></div>
+                <ul class="udv-clearfix">
+                    <li><a href="#" target="_blank">NavItem</a></li>
+                    <li><a href="#" target="_blank">NavItem</a></li>
+                    <li><a href="#" target="_blank">NavItem</a></li>
+                    <li><a href="#" target="_blank">NavItem</a></li>
+                    <li style="border:none;"><a href="#" target="_blank">NavItem</a></li>
+                </ul>
+            </div>
+            <div class="slogan">
+                <p class="tit">Slogan  False Word</p>
+                <p class="txt">Navltem Be the first to hear what is happening at Old Trafford! To sign up to the match package where you receive Team Sheets, Goals, HT and FT simply text MUFC</p>
+            </div>
+            <div id="search_box">
+                <div class="searchTool">
+                    <form method="get" action="" name="headSearchForm" id="headSearchForm" onsubmit="return dosearch(this);">
+                        <div class="selSearch">
+                            <div class="nowSearch" id="headSlected" onclick="if(document.getElementById('headSel').style.display=='none'){document.getElementById('headSel').style.display='block';}else {document.getElementById('headSel').style.display='none';};return false;" onmouseout="drop_mouseout('head');">Club1</div>
+                            <div class="btnSel"><a href="#" onclick="if(document.getElementById('headSel').style.display=='none'){document.getElementById('headSel').style.display='block';}else {document.getElementById('headSel').style.display='none';};return false;" onmouseout="drop_mouseout('head');"></a></div>
+                            <div class="clear"></div>
+                            <ul class="selOption" id="headSel" style="display: none;">
+                                <li><a href="#" onclick="return search_show('head','video',this)" onmouseover="drop_mouseover('head');" onmouseout="drop_mouseout('head');">Club1</a></li>
+                                <li><a href="#" onclick="return search_show('head','playlist',this)" onmouseover="drop_mouseover('head');" onmouseout="drop_mouseout('head');">Club2</a></li>
+                                <li><a href="#" onclick="return search_show('head','user',this)" onmouseover="drop_mouseover('head');" onmouseout="drop_mouseout('head');">Club3</a></li>
+                                <li><a href="#" onclick="return search_show('head','bar',this)" onmouseover="drop_mouseover('head');" onmouseout="drop_mouseout('head');">Club4</a></li>
+                                <li><a href="#" onclick="return search_show('head','pk',this)" onmouseover="drop_mouseover('head');" onmouseout="drop_mouseout('head');">Club5</a></li>
+                            </ul>
+                        </div>
+                        <input class="txtSearch" id="headq" name="q" type="text" value="World Cup">
+                        <input name="searchdomain" type="hidden" value="">
+                        <input id="headSearchType" name="searchType" type="hidden" value="playlist">
+                        <div class="btnSearch">
+                            <a href="#" onclick="javascript:return dosearch(document.getElementById('headSearchForm'));"></a>
+                        </div>
+                        <div class="clear"></div>
+                    </form>
+                </div>
+                <script type="text/javascript" src="js/searchbox.js"></script>
+            </div>
+        </div>
+        <script type='text/javascript' src='js/jquery.slider.js'></script>
+        <div class="teamShow">
+            <ul class="udv-clearfix">
+                <li><a href="#" target="_blank"></a></li>
+                <li><a href="#" target="_blank"></a></li>
+                <li><a href="#" target="_blank"></a></li>
+                <li><a href="#" target="_blank"></a></li>
+                <li><a href="#" target="_blank"></a></li>
+                <li><a href="#" target="_blank"></a></li>
+                <li><a href="#" target="_blank"></a></li>
+                <li><a href="#" target="_blank"></a></li>
+                <li><a href="#" target="_blank"></a></li>
+                <li><a href="#" target="_blank"></a></li>
+                <li><a href="#" target="_blank"></a></li>
+            </ul>
+        </div>
+        <div class="block_links">
+            <p class="tit">False word false word false word</p>
+            <p class="txt">Navltem Be the first to hear what is happening at Old Trafford! To sign up to the match package where
+                you receive Team Sheets, Goals, HT and FT simply text MUFC STAN to 60442Alerts Cost 25p per text
+                alertMatch information such as goal alerts give the full descriptions of the action from a fan's point of
+                view not simply the score like most unofficial services.</p>
+            <ul class="udv-clearfix">
+                <li>
+                    <div class="recommends">
+                        <img src="images/samplePic.jpg">
+                        <s class="v_star"></s>
+                    <p class="links"><a href="#">Mply text mufc stan to alerts cos...></a></p>
+                    </div>
+                    <p class="comments"><a href="#">Comments false word false</a></p>
+                </li>
+                <li>
+                    <div class="recommends">
+                        <img src="images/samplePic.jpg">
+                        <s class="s_star"></s>
+                        <p class="links"><a href="#">Mply text mufc stan to alerts cos...></a></p>
+                    </div>
+                    <p class="comments"><a href="#">Comments false word false</a></p>
+                </li>
+                <li style="margin:0;">
+                    <div class="recommends">
+                        <img src="images/samplePic.jpg">
+                        <s class="s_star"></s>
+                        <p class="links"><a href="#">Mply text mufc stan to alerts cos...></a></p>
+                    </div>
+                    <p class="comments"><a href="#">Comments false word false</a></p>
+                </li>
+            </ul>
+        </div>
+        <div class="btm udv-clearfix">
+            <span>Comments false word false</span>
+            <span style="*width:305px;"><a href="#"><img src="images/VIP_EXCLUSIVE.png"></a></span>
+            <span>Comments false word false</span>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="f_wrap">
+            <div class="f_top">COPYRIGHT(C) VIP F2F 2014</div>
+                <div class="f_bottom udv-clearfix">
+                    <div class="fb_left">
+                        <p>img</p>
+                        <ul class="udv-clearfix">
+                            <li style="padding-left:0;"><a href="#" target="_blank">About</a></li>
+                            <li><a href="#" target="_blank">Contact</a></li>
+                            <li style="border:none;" target="_blank"><a href="#">Sitemap</a></li>
+                        </ul>
+                    </div>
+                    <div class="fb_right">
+                        <p>Cum sociis natocue penatibus et magnis dis parturient montes,nascetur</p>
+                        <p>ridiculus mus.Donec llamcorpernulla non metus auctor.Cum sociis</p>
+                        <p>natoque penatibus et magnis dis parturient montes,nascetur ridiculus mus</p>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

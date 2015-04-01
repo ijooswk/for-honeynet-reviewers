@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/HTMLHead :: headTag(${pageName == 'new'} ? 'Create Your Package': 'Edit Your Package')">
+  <meta charset="UTF-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <title>Fan2Fan</title>
+
+  <link href="../../static/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
+  <link href="../../static/lib/bootstrap-3-datepicker/css/datepicker3.css" rel="stylesheet"/>
+  <link href="../../static/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+  <link href="../../static/lib/jquery-steps/demo/css/jquery.steps.css" rel="stylesheet"/>
+  <link href="../../static/lib/dropzone/downloads/css/dropzone.css" rel="stylesheet"/>
+  <link href="../../static/css/common.css" rel="stylesheet"/>
+  <link href="../../static/css/package.css" rel="stylesheet"/>
+
+  <script src="../../static/lib/jquery/jquery.min.js"></script>
+  <script src="../../static/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="../../static/lib/bootstrap-3-datepicker/js/bootstrap-datepicker.js"></script>
+  <script src="../../static/lib/jquery-steps/build/jquery.steps.min.js"></script>
+  <script src="../../static/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+  <script src="../../static/lib/dropzone/downloads/dropzone.min.js"></script>
+
+  <!-- Init Module -->
+  <script src="../../static/js/init.js"></script>
+  <!-- Module Definition -->
+  <script src="../../static/js/pages/editPackage.js"></script>
+
+  <!-- Load Module -->
+  <script src="../../static/js/loader.js"></script>
+
+</head>
+<body>
+
+<div id="page-wrap">
+    
+<div th:replace="fragments/Header :: header">
+</div>
+
+<div id="EditPackage" class="container" data-page-name="edit-package">
+  <h3>Package Information</h3>
+  <div class="row">
+      <form id="newPackageForm" name="newPackageForm" action="#" method="post"
+          th:action="@{/packages/} + (${pageName == 'edit'} ? ${id} + '/' : '')"
+          th:object="${packageCommand}" class="col-sm-6" role="form">
+
+          <input type="hidden" th:if="${pageName == 'edit'}" name="_method" value="put"/>
+
+          <div class="form-group">
+              <label for="packageTitle">Title *</label>
+              <input type="text" th:field="*{title}" class="form-control" id="packageTitle" placeholder="Package Title" />
+          </div>
+
+          <div class="form-group items-wrap">
+              <label for="packageTitle">Services *</label>
+              <ul class="items sortable">
+                  <li class="service-item item-wrap has-feedback"
+                      th:unless="${#lists.isEmpty(packageCommand)}"
+                      th:each="item : *{trips}">
+                      <input type="text" class="service-title form-control edit-service-input"
+                             name="trips[].place" th:value="${item.place}" />
+                      <textarea class="form-control service-desc" name="trips[].desc"
+                                th:text="${item.desc}" placeholder="Enter descriptions here"></textarea>
+                      <span class="glyphicon glyphicon-remove text-danger item-remove"></span>
+                  </li>
+              </ul>
+              <div class="has-feedback">
+                  <div class="input-group">
+                  <input type="text" class="form-control" id="add-service-input" placeholder="Press Enter to Add a service" />
+                  <div class="input-group-addon"><a href="javascript:;" class="add-service-btn"><span class="glyphicon glyphicon-plus"></span></a></div>
+                  </div><!-- .input-group -->
+              </div><!-- .has-feedback -->
+          </div><!-- .form-group -->
+
+          <input type="hidden" th:field="*{summary}" class="form-control" placeholder="Package summary" />
+
+          <button type="submit" class="btn btn-primary">Save Package</button>
+          <a th:if="${pageName == 'edit'}" class="btn btn-danger delete-package-btn" role="button" th:attr="data-id=${id}" href="javascript:;">Delete Package</a>
+          
+
+      </form>
+      
+  </div><!-- .row -->
+  
+</div>
+
+</div><!-- #page-wrap -->
+
+<div id="footer" th:replace="fragments/Footer :: footer"> </div>
+
+
+</body>
+</html>

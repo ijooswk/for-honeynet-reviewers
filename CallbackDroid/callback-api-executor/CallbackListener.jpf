@@ -1,0 +1,5 @@
+target = com.lynnlyc.apicaller.Driver
+
+classpath = /Users/yuanchun/project/workplace-eclipse/jpf/jpf-core/build/jpf-classes.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_05.jdk/Contents/Home/jre/lib/rt.jar:../android-environment/out:bin:.
+
+listener+=,CallbackListener

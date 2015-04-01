@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" xmlns:android="http://schemas.android.com/apk/res/android">
+   
+    <RelativeLayout
+        android:id="@+id/layout_button"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="#9F000000">
+
+        <Button
+            android:id="@+id/button_confirm"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/button_ok_selector" >
+        </Button>
+
+        <Button
+            android:id="@+id/button_exit"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_alignParentLeft="true"
+            android:visibility="gone"
+            android:background="@drawable/button_exit"
+           	 >
+        </Button>
+    </RelativeLayout>
+    
+    <com.gedeng.ui.customview.CropCircularImageView
+        android:id="@+id/canvas_crop"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:background="#303030"
+        android:layout_above="@id/layout_button"/>
+
+</RelativeLayout>

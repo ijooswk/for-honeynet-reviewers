@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">咯 噔</string>
+
+    <!-- Activity Title -->
+    <string name="title_activity_compose_blog">发 布</string>
+    <string name="title_activity_messages">消息中心</string>
+    <string name="title_section1">赞</string>
+    <string name="title_section2">评论</string>
+    <string name="title_section3">通知</string>
+    <string name="title_activity_my_account">我的账号</string>
+    <string name="title_activity_show_blog">咯 噔</string>
+    <string name="title_activity_my_follows">我的关注</string>
+    <string name="title_activity_my_posts">我的发布</string>
+    <string name="title_activity_reset_password">返 回</string>
+    <string name="title_activity_set_schools">返 回</string>
+    <string name="title_activity_notify_settings">消息设置</string>
+    <string name="title_activity_feedback">意见反馈</string>
+
+    <!-- Main Menu -->
+    <string name="menu_my_account">我的账号</string>
+    <string name="menu_my_posts">我的发布</string>
+    <string name="menu_my_follows">我的关注</string>
+    <string name="menu_messages">消息中心</string>
+    <string name="menu_settings">系统设置</string>
+    <string name="menu_log_out">退出账号</string>
+
+    <!-- Texts of Controls -->
+    <string name="ptr_pull_to_refresh">下拉刷新</string>
+    <string name="ptr_release_to_refresh">立即释放刷新</string>
+    <string name="ptr_refreshing">正在刷新…</string>
+    <string name="hint_edit_text_compose_blog">请输入描述</string>
+    <string name="hint_edit_text_add_tags">请输入标签, 标签之间用逗号隔开</string>
+    <string name="comment_button_text">发布</string>
+
+    <string name="login_input_user_name">请输入用户名或手机号</string>
+    <string name="login_input_phone_number">请输入手机号</string>
+    <string name="login_input_password">请输入密码</string>
+    <string name="login_forget_password">忘记密码</string>
+    <string name="login_login">登 录</string>
+    <string name="login_other">其他方式登录</string>
+    <string name="login_failed">登陆失败</string>
+    <string name="register_register">注 册</string>
+    <string name="register_get_validcode">点击获取验证码</string>
+    <string name="register_area_code">+86  |</string>
+    <string name="register_input_validcode">请输入验证码</string>
+    <string name="register_confirm">确 认</string>
+    <string name="register_get_validcode_again">点击再次获取验证码</string>
+    <string name="signup_input_vericode">请输入验证码</string>
+
+    <string name="register_finish">完成注册</string>
+    <string name="register_protocal">用户协议</string>
+    <string name="register_agree">我已阅读并同意</string>
+    <string name="register_next_step">下一步</string>
+    <string name="register_input_name">请输入姓名</string>
+    <string name="register_input_school_collage">我的大学</string>
+    <string name="register_input_school_year">入学年份</string>
+    
+    <string name="signup_set_password">请输入密码</string>
+    <string name="signup_next_step">下一步</string>
+
+    <color name="light_gray">#eeeeee</color>
+
+    <dimen name="text_size_little">13sp</dimen>
+
+    <string name="back">返回</string>
+    <string name="title_activity_user_basic_info">个人信息</string>
+    <string name="action_settings">Settings</string>
+    <string name="exit">取 消</string>
+    <string name="confirm">确 定</string>
+    <string name="reset_input_password">请输入新密码</string>
+    <string name="register_school_name_middle_school">我的中学</string>
+    <string name="register_school_name_primary_school">我的小学</string>
+    <string name="ok">确 定</string>
+    <string name="send">发 送</string>
+   
+    <string name="hello_world">Hello world!</string>
+    <string name="hint_feedback_edit_text">尊敬的用户，感谢您的使用。请告诉我们您的建议!</string>
+    <string name="liked_warning">您已赞过</string>
+    <string name="follow">关 注</string>
+    <string name="cancel_follow">取消关注</string>
+    <string name="reply">回复</string>
+    <string name="comment">评论</string>
+    <string name="complete">完 成</string>
+    
+	<string name="click_to_get_vericode">点击获取验证码</string>
+	<string name="title_check_phone_number">请确认手机号码</string>
+	<string name="message_send_vericode_to_phone_number">我们将发送验证码短信到手机 </string>
+	<string name="message_invalid_phone_number">请输入11位电话号码</string>
+	
+	<string name="notice">请注意</string>
+	<string name="message_invalid_user_name_or_password">手机号或密码不能为空</string>
+	<string name="message_invalid_password">密码不能少于6位</string> 
+	
+	<string name="message_invalid_description">描述不能为空</string>
+	<string name="message_send_post_failed">发布失败</string>
+	<string name="message_send_post_success">发布成功</string>
+	
+	<string name="message_invalid_comment">发布内容不能为空</string>
+	<string name="message_send_comment_failed">发布失败</string>
+	<string name="message_send_comment_success">发布成功</string>
+	
+	<string name="title_login_failed">登陆失败</string>
+	
+	<string name="title_check_vericode_failed">验证码出错</string>
+	<string name="message_check_vericode_failed">请确认验证码，并保证网络连接正常</string>
+	
+	<string name="title_signup_failed">注册失败</string>
+	
+	<string name="message_save_success">保存成功</string>
+	<string name="message_save_failed">保存失败</string>
+	
+	<string name="liked_your_post">赞了您的发布</string>
+	
+	<string name="message_invalid_feedback">反馈内容不能为空</string>
+	<string name="message_send_feedback_success">发送成功</string>
+	<string name="message_send_feedback_failed">发送失败</string>
+	
+    <!-- MyAccountActivity -->
+    <string name="profile_photo">头 像</string>
+    <string name="user_name">用户名</string>
+    <string name="signature">签 名</string>
+    <string name="gender">性 别</string>
+    <string name="schools">学 校</string>
+    <string name="reset_password">重置密码</string>
+    <string name="signup">注 册</string>
+    <string name="login">登 录</string>
+    <string name="title_activity_register_step_four"></string>
+    <string name="reset_password_resend"> 秒后重新获取验证码</string>
+    <string name="get_password_again">重新获取验证码</string>
+   
+    <string name="press_twice_to_exit">再按一次退出</string>
+    <string name="logout_failed">注销失败</string>
+    <string name="reset_password_failed">重置密码失败</string>
+    <string name="network_error_hint">您的网络出现问题，请稍后重试</string>
+    <string name="no_more_content_hint">没有更多内容了</string>
+    
+    <string name="current_school">所在学校</string>
+    <string name="his_posts">发布</string>
+
+</resources>

@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8"/>
+<title>Nclub</title>
+<link rel="stylesheet" href="../../static/css/Nclub/reset.css"/>
+<link rel="stylesheet" href="../../static/css/Nclub/styleFor1.css"/>
+<link rel="stylesheet" href="../../static/css/Nclub/Nclub03.css"/>
+<script type="text/javascript" src="../../static/js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="../../static/js/mustache.js"></script>
+<script type="text/javascript">
+var player = [
+  {
+    "imagesrc": "../../static/img/Nclub/messi.jpg",
+    "name": "Lionel Andrés Messi",
+    "number": 10,
+    "position": "Right wing, second striker",
+    "history": "blablabla\nblablabla\nthis is player1",
+    "display": false
+  },
+  {
+    "imagesrc": "../../static/img/Nclub/messi.jpg",
+    "name": "Lionel Andrés Messi",
+    "number": 10,
+    "position": "Right wing, second striker",
+    "history": "blablabla\nblablabla\nthis is player2",
+    "display": false
+  },
+  {
+    "imagesrc": "../../static/img/Nclub/messi.jpg",
+    "name": "Lionel Andrés Messi",
+    "number": 10,
+    "position": "Right wing, second striker",
+    "history": "blablabla\nblablabla\nthis is player3",
+    "display": false
+  },
+  {
+    "imagesrc": "../../static/img/Nclub/messi.jpg",
+    "name": "Lionel Andrés Messi",
+    "number": 10,
+    "position": "Right wing, second striker",
+    "history": "blablabla\nblablabla\nthis is player4",
+    "display": false
+  },
+  {
+    "imagesrc": "../../static/img/Nclub/messi.jpg",
+    "name": "Lionel Andrés Messi",
+    "number": 10,
+    "position": "Right wing, second striker",
+    "history": "blablabla\nblablabla\nthis is player5",
+    "display": false
+  },
+  {
+    "imagesrc": "../../static/img/Nclub/messi.jpg",
+    "name": "Lionel Andrés Messi",
+    "number": 10,
+    "position": "Right wing, second striker",
+    "history": "blablabla\nblablabla\nthis is player6",
+    "display": false
+  },
+  {
+    "imagesrc": "../../static/img/Nclub/messi.jpg",
+    "name": "Lionel Andrés Messi",
+    "number": 10,
+    "position": "Right wing, second striker",
+    "history": "blablabla\nblablabla\nthis is player7",
+    "display": false
+  },
+  {
+    "imagesrc": "../../static/img/Nclub/messi.jpg",
+    "name": "Lionel Andrés Messi",
+    "number": 10,
+    "position": "Right wing, second striker",
+    "history": "blablabla\nblablabla\nthis is player8",
+    "display": false
+  },
+  {
+    "imagesrc": "../../static/img/Nclub/messi.jpg",
+    "name": "Lionel Andrés Messi",
+    "number": 10,
+    "position": "Right wing, second striker",
+    "history": "blablabla\nblablabla\nthis is player9",
+    "display": false
+  },
+  {
+    "imagesrc": "../../static/img/Nclub/messi.jpg",
+    "name": "Lionel Andrés Messi",
+    "number": 10,
+    "position": "Right wing, second striker",
+    "history": "blablabla\nblablabla\nthis is player10",
+    "display": false
+  },
+  {
+    "imagesrc": "../../static/img/Nclub/messi.jpg",
+    "name": "Lionel Andrés Messi",
+    "number": 10,
+    "position": "Right wing, second striker",
+    "history": "blablabla\nblablabla\nthis is player11",
+    "display": false
+  },
+  {
+    "imagesrc": "../../static/img/Nclub/messi.jpg",
+    "name": "Lionel Andrés Messi",
+    "number": 10,
+    "position": "Right wing, second striker",
+    "history": "blablabla\nblablabla\nthis is player12",
+    "display": false
+  },
+  {
+    "imagesrc": "../../static/img/Nclub/messi.jpg",
+    "name": "Lionel Andrés Messi",
+    "number": 10,
+    "position": "Right wing, second striker",
+    "history": "blablabla\nblablabla\nthis is player13",
+    "display": false
+  },
+  {
+    "imagesrc": "../../static/img/Nclub/messi.jpg",
+    "name": "Lionel Andrés Messi",
+    "number": 10,
+    "position": "Right wing, second striker",
+    "history": "blablabla\nblablabla\nthis is player14",
+    "display": false
+  },
+  {
+    "imagesrc": "../../static/img/Nclub/messi.jpg",
+    "name": "Lionel Andrés Messi",
+    "number": 10,
+    "position": "Right wing, second striker",
+    "history": "blablabla\nblablabla\nthis is player15",
+    "display": false
+  },
+  {
+    "imagesrc": "../../static/img/Nclub/messi.jpg",
+    "name": "Lionel Andrés Messi",
+    "number": 10,
+    "position": "Right wing, second striker",
+    "history": "blablabla\nblablabla\nthis is player16",
+    "display": false
+  },
+  {
+    "imagesrc": "../../static/img/Nclub/messi.jpg",
+    "name": "Lionel Andrés Messi",
+    "number": 10,
+    "position": "Right wing, second striker",
+    "history": "blablabla\nblablabla\nthis is player17",
+    "display": false
+  },
+  {
+    "imagesrc": "../../static/img/Nclub/messi.jpg",
+    "name": "Lionel Andrés Messi",
+    "number": 10,
+    "position": "Right wing, second striker",
+    "history": "blablabla\nblablabla\nthis is player18",
+    "display": false
+  }
+];
+
+var tmpl = '\
+			<span>\
+				<div class="playerImageShow">\
+					<img src="{{imagesrc}}" alt="" />\
+					<a href="javascript:;">Upload Image</a>\
+					<a class="removeBtn">Remove Player</a>\
+				</div>\
+				<div class="playerInfo">\
+					<p>Name</p>\
+					<input type="text" value="{{name}}" />\
+					<p>Jersey Number</p>\
+					<input type="number" value="{{number}}" />\
+					<p>Playing Position</p>\
+					<input type="text" value="{{position}}"/>\
+					<p>His Brief History</p>\
+					<textarea rows="5">{{history}}</textarea>\
+				</div>\
+			</span>';
+
+var offsetCur;
+var nDisplayed = 0;
+
+function setOffset(offset) {
+  $("#playerList>span").each(function (idx) {
+    if (idx >= offsetCur && idx < offsetCur + 6) {
+      $(this).hide();
+    }
+    if (idx >= offset && idx < offset + 6) {
+      $(this).show();
+    }
+  });
+  offsetCur = offset;
+}
+
+function renderPlayerAll() {
+  $("#playerList").empty();
+  for (var i = 0; i < player.length; ++i) {
+    renderPlayer(player[i]);
+  }
+  $("#playerList>span").hide();
+  $(".removeBtn").click(function () {
+    removePlayer($(this).parent().parent().prevAll().length);
+  });
+}
+
+function renderPlayer(pl) {
+  $("#playerList").append(Mustache.render(tmpl, pl));
+}
+
+function refreshBtns() {
+  var nPlayers = player.length;
+  var nPages = Math.ceil(nPlayers / 6);
+  refreshPageSelector(nPages);
+  refreshPlayerBtns(nPlayers);
+}
+
+function refreshAll(idx) {
+  refreshBtns();
+  renderPlayerAll(idx);
+  showPlayer(idx);
+}
+
+function showPlayer(idx) {
+  setOffset(parseInt(Math.floor(idx / 6) * 6));
+}
+
+function refreshPageSelector(nPages) {
+  $("#pageSelector").empty();
+  for (var i = 0; i < nPages; ++i) {
+    $("#pageSelector").append('<a href="javascript:showPlayer(' + i * 6 + ');" class="pageBtn">' + (i * 6 + 1) + '-' + (i * 6 + 6) + '</a>')
+  }
+}
+
+function refreshPlayerBtns(nPlayers) {
+  $("#playerBtns").empty();
+  nDisplayed = 0;
+  for (var i = 0; i < nPlayers; ++i) {
+    var extraclass = "";
+    if (player[i].display) {
+      extraclass = " toggleActive";
+      ++nDisplayed;
+    }
+    $("#playerBtns").append('<a href="javascript:;" class="toggleBtn' + extraclass + '">' + (i + 1) + '</a>');
+  }
+
+  $(".toggleBtn").click(function () {
+    if ($(this).hasClass("toggleActive")) {
+      $(this).removeClass("toggleActive");
+      player[parseInt($(this).html()) - 1].display = false;
+      --nDisplayed;
+    } else if (nDisplayed < 8) {
+      $(this).addClass("toggleActive");
+      player[parseInt($(this).html()) - 1].display = true;
+      ++nDisplayed
+    } else {
+      $("#warning").addClass("colorred");
+      $(this).mouseleave(function () {
+        $("#warning").removeClass("colorred");
+      });
+    }
+  });
+
+  $("#playerBtns").append('<a href="javascript:appendPlayer();" class="toggleBtn">+</a>');
+}
+
+function appendPlayer() {
+  var newplayer = {
+    "imgsrc": "",
+    "name": "",
+    "number": 0,
+    "position": "",
+    "history": "",
+    "display": false
+  }
+  player.push(newplayer);
+  refreshAll(player.length - 1);
+}
+
+function removePlayer(idx) {
+  saveAll();
+  $("#playerList").children().eq(idx).hide("slow", function () {
+    player.splice(idx, 1);
+    refreshAll(player.length > offsetCur ? offsetCur : offsetCur - 6);
+  });
+}
+
+function saveAll() {
+  $("#playerList>span").each(function (idx) {
+    player[idx].imgsrc = $(this).find("img").attr("src");
+    var inputs = $(this).find("input");
+    player[idx].name = inputs[0].value;
+    player[idx].number = inputs[1].value;
+    player[idx].position = inputs[2].value;
+    player[idx].history = $(this).find("textarea").val();
+  });
+}
+
+$(document).ready(function () {
+  refreshAll(0);
+});
+</script>
+</head>
+<body>
+<div class="wrapper">
+  <div class="NavWrapper clearfix">
+    <ul class="topNav fr clearfix">
+      <li class="topNav-1"><a href="#">Language</a></li>
+      <li class="topNav-2"><a href="#">Login/Sign Up</a></li>
+    </ul>
+  </div>
+  <div class="subNavWrapper clearfix">
+    <h1 class="fl"><a href="#">Bnand</a></h1>
+
+    <div class="searchWrapper fl">
+      <div class="searchArea fl">
+        <a href="javascript:;" class="searchBtn fl"></a>
+
+        <div class="searchSt fl">
+          <div class="searchStA">Tupe</div>
+        </div>
+        <input class="txtSearch fl" type="text" value="World Cup">
+      </div>
+      <a href="javascript:;" class="col-b fl">Advanced</a>
+    </div>
+    <ul class="subNav fr">
+      <li><a href="#">Navltem</a></li>
+      <li><a href="#">Navltem</a></li>
+      <li><a href="#">Navltem</a></li>
+      <li><a href="#">Navltem</a></li>
+      <li><a href="#">Navltem</a></li>
+    </ul>
+  </div>
+  <div class="contentWrapper clearfix">
+    <div class="leftWrapper fl">
+      <div class="leftTop">
+        <h2>Club Account Setup</h2>
+        <hr/>
+      </div>
+      <ul class="leftNav clearfix">
+        <li><a href="#">Club Information</a></li>
+        <li class="selected"><a href="#">Team badge/Player List</a></li>
+        <li><a href="#">Video</a></li>
+        <li><a href="#">Match Calendar</a></li>
+      </ul>
+    </div>
+    <div class="rightWrapper fr">
+      <h2>Personal information</h2>
+
+      <div class="InfoBody clearfix">
+        <div class="InfoBody-head clearfix">
+          <span class="InfoTip col-g ft-i fl">Team Badge</span>
+          <a href="javascript:;" class="col-b fr">Close</a>
+        </div>
+        <div class="badgeShow clearfix">
+          <div class="imageShow"></div>
+          <div class="sizePreview">
+            <div>Club logo will automatically generate three dimensions please pay attention to small and medium size
+              marks is clear
+            </div>
+            <div class="sizeMarkerBig fl">
+              <img id="marker180" src="" alt="marker180"/>
+
+              <div>Size markers, 180x180 pixels</div>
+            </div>
+            <div class="sizeMarkerMed">
+              <img id="marker50" src="" alt="marker50"/>
+
+              <div>Size markers,<br/>50x50 pixels</div>
+            </div>
+            <div class="sizeMarkerSml">
+              <img id="marker30" src="" alt="marker30"/>
+
+              <div>Size markers,<br/>30x30 pixels</div>
+            </div>
+          </div>
+        </div>
+        <div class="publishBtn">
+          <input type="datetime-local" class="fl"/>
+          <a href="javascript:;" class="fl">The timed release</a>
+          <a href="javascript:;" class="fl">Publish</a>
+        </div>
+      </div>
+      <div class="InfoBody clearfix">
+        <div class="InfoBody-head clearfix">
+          <span class="InfoTip col-g ft-i fl">Player List</span>
+          <a href="javascript:;" class="col-b fr">Close</a>
+        </div>
+        <div>
+          <div class="displaySelector">
+            <div id="playerBtns"></div>
+            <div class="remarks">
+              <div>blablablablablablablablablablabla blablablablablablabla blablablablablablablablablablablablablabla
+                <span id="warning">(No more than 8 players displayed on club homepage!)</span></div>
+              <div class="fr legend">
+                <span class="rectSymbol toggleActive"></span><span class="tmp">The club home display</span>
+                <span class="rectSymbol"></span><span>Secondary</span>
+              </div>
+            </div>
+          </div>
+          <div id="pageSelector"></div>
+          <div id="playerList"></div>
+          <div class="publishBtn">
+            <input type="datetime-local" class="fl"/>
+            <a href="javascript:;" class="fl">The timed release</a>
+            <a href="javascript:;" class="fl">Publish</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+<div class="footer">
+  <div class="f_wrap">
+    <div class="f_top">COPYRIGHT(C) VIP F2F 2014</div>
+    <div class="f_bottom clearfix">
+      <div class="fl">
+        <p>img</p>
+        <ul class="clearfix footNav">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Sitemap</a></li>
+        </ul>
+      </div>
+      <div class="fr">
+        <p>Cum sociis natocue penatibus et magnis dis parturient montes,nascetur</p>
+
+        <p>ridiculus mus.Donec llamcorpernulla non metus auctor.Cum sociis</p>
+
+        <p>natoque penatibus et magnis dis parturient montes,nascetur ridiculus mus</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

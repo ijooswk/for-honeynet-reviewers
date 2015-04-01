@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/HTMLHead :: headTag('Forgot Password ')">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="keywords" content="fan,football"/>
+  <meta name="description" content="fan2fan"/>
+  <title>Forgot Password | Fan2Fan</title>
+
+  <!--<link rel="icon" type="image/x-icon" href=""/>-->
+
+  <link href="../../static/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
+  <link href="../../static/lib/bootstrap-3-datepicker/css/datepicker3.css" rel="stylesheet"/>
+  <link href="../../static/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+  <link href="../../static/lib/jquery-steps/demo/css/jquery.steps.css" rel="stylesheet"/>
+  <link href="../../static/lib/dropzone/downloads/css/dropzone.css" rel="stylesheet"/>
+  <link href="../../static/css/common.css" rel="stylesheet"/>
+  <link href="../../static/css/nav.css" rel="stylesheet"/>
+  <link href="../../static/css/package.css" rel="stylesheet"/>
+  <link href="../../static/css/chart.css" rel="stylesheet"/>
+  <link href="../../static/css/account.css" rel="stylesheet"/>
+
+  <!-- Library Definition -->
+  <script src="../../static/lib/jquery/jquery.min.js"></script>
+  <script src="../../static/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="../../static/lib/bootstrap-3-datepicker/js/bootstrap-datepicker.js"></script>
+  <script src="../../static/lib/jquery-steps/build/jquery.steps.min.js"></script>
+  <script src="../../static/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+  <script src="../../static/lib/dropzone/downloads/dropzone.min.js"></script>
+
+  <!-- Init Module -->
+  <script src="../../static/js/init.js"></script>
+  <!-- Module Definition -->
+  <script src="../../static/js/pages/editPackage.js"></script>
+  <script src="../../static/js/pages/package.js"></script>
+  <script src="../../static/js/pages/forget.js"></script>
+
+  <!-- Load Module -->
+  <script src="../../static/js/loader.js"></script>
+</head>
+
+<body>
+<div id="ForgetPasswordResult" class="account container" data-page-name="">
+  <div class="wrapper">
+    <section>
+      <h2 class="form-signin-heading">Fan2Fan</h2>
+      <div class="jumbotron">
+        <p>We've sent you an email with instructions to reset your password.</p>
+        <p>Please make sure it didn't wind up in your Junk Mail. If you aren't receiving our password reset emails, <a href="#">contact us</a>.</p>
+      </div>
+      <a class="btn btn-primary btn-block" href="#"
+         th:href="@{/}">Done</a>
+    </section>
+  </div>
+</div>
+</body>
+</html>

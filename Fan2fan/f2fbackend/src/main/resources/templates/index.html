@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/HTMLHead :: headTag('Welcome! ')">
+  <meta charset="UTF-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <title>Fan2Fan</title>
+
+  <!-- Replace the relative path of resources if needed. -->
+  <link href="../static/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
+  <link href="../static/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+  <link href="../static/lib/jquery-steps/demo/css/jquery.steps.css" rel="stylesheet"/>
+  <link href="../static/lib/dropzone/downloads/css/dropzone.css" rel="stylesheet"/>
+  <link href="../static/css/common.css" rel="stylesheet"/>
+  <link href="../static/css/package.css" rel="stylesheet"/>
+
+  <script src="../static/lib/jquery/jquery.min.js"></script>
+  <script src="../static/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="../static/lib/jquery-steps/build/jquery.steps.min.js"></script>
+  <script src="../static/lib/dropzone/downloads/dropzone.min.js"></script>
+
+  <!-- Init Module -->
+  <script src="../static/js/init.js"></script>
+  <!-- Module Definition -->
+  <script src="../static/js/pages/editPackage.js"></script>
+
+  <!-- Load Module -->
+  <script src="../static/js/loader.js"></script>
+
+</head>
+<body>
+
+<!-- Page Body Here, replace the id attr of following div -->
+<div id="Index" class="container" data-page-name="">
+    <div class="home-page-wrap">
+        <img src="../static/img/home-background.jpg" class="background-image" alt="" />
+        <div class="entry-wrap">
+            <h1 class="slogan">The Fans</h1>
+            <a class="entry-btn" href="#" th:href="@{/account/login/}">Connect</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+.nav-container {
+  margin:0 25px;
+  padding: 0 25px;
+}
+
+#header .nav>li>a {
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+#create-package-btn {
+  margin-left: 5px;
+  margin-top: 8px;
+  padding: 0.4em 0.9em;
+  background-color: #fce459;
+  background-image: linear-gradient(#fce359, #fed231);
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.11),inset 0 0 1px 1px rgba(255,255,255,0.12);
+  border: 1px solid #e5b50f;
+}
+
+#footer nav {
+  margin-bottom: 0;
+}
