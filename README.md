@@ -36,8 +36,7 @@ Python, Smali(Dalvik IR)
 Reverse engineering, Repackage, Control Flow Graph
 
 # Project 5. gedeng-android
+An Android application developed in Intellij IDE. I like this app and the latest version is downloadable in market. Maybe we can create an Android app of Online Sandbox Tool? Never mind.
 
 # Project 6. honeynet-socket-io
 A coding task of the Honeynet project.
-
-An Android application developed in Intellij IDE. I like this app and the latest version is downloadable in market. Maybe we can create an Android app of Online Sandbox Tool? Never mind.
