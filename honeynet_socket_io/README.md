@@ -20,3 +20,9 @@ python HoneynetSocketClient.py -H <host> -p <port> -t receiver
 Anything typed by sender will be displayed.
 
 You can start multiple senders and receivers.
+
+To run unit tests:
+```shell
+python TestHoneynetSocketServer.py
+python TestHoneynetSocketClient.py
+```

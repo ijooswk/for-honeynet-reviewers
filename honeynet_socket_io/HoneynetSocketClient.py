@@ -28,12 +28,14 @@ class SocketClient(object):
     def init_connect(self):
         try:
             self.sock.connect(self.server)
-        except:
+        except Exception as e:
+            self.logger.error(e)
             raise UnableToConnectException
         self.is_connected = True
         self.logger.info("Connected to %s:%s", self.server[0], self.server[1])
 
     def disconnect(self):
+        self.is_connected = False
         self.sock.close()
 
 class SenderSocketClient(SocketClient):
@@ -50,29 +52,27 @@ class SenderSocketClient(SocketClient):
     '''
     def connect(self):
         self.init_connect()
-        try:
-            self.sock.sendall(HoneynetSocketUtil.SENDER_OP)
-            response = self.sock.recv(HoneynetSocketUtil.BUF_SIZE)
 
-            if response == HoneynetSocketUtil.RET_SUCCESS:
-                self.logger.info("Connected as Sender")
-                self.send_message()
-            elif response == HoneynetSocketUtil.RET_FAIL:
-                self.sock.close()
-                self.is_connected = False
-                raise DenySenderException
-            else:
-                self.sock.close()
-                self.is_connected = False
-                raise UnknownResponseException
-        finally:
-            self.sock.close()
+        self.sock.sendall(HoneynetSocketUtil.SENDER_OP)
+        response = self.sock.recv(HoneynetSocketUtil.BUF_SIZE)
 
-    def send_message(self):
+        if response == HoneynetSocketUtil.RET_SUCCESS:
+            self.logger.info("Connected as Sender")
+        elif response == HoneynetSocketUtil.RET_FAIL:
+            self.disconnect()
+            raise DenySenderException
+        else:
+            self.disconnect()
+            raise UnknownResponseException
+
+    def send_message(self, msg):
+        if msg:
+            self.sock.sendall(msg)
+
+    def start_send_message(self):
         while(self.is_connected):
             message = raw_input("input>")
-            if message:
-                self.sock.sendall(message)
+            self.send_message(message)
 
 class ReceiverSocketClient(SocketClient):
     """
@@ -89,27 +89,25 @@ class ReceiverSocketClient(SocketClient):
     def connect(self):
         self.init_connect()
 
-        try:
-            self.sock.sendall(HoneynetSocketUtil.RECEIVER_OP)
-            response = self.sock.recv(HoneynetSocketUtil.BUF_SIZE)
+        self.sock.sendall(HoneynetSocketUtil.RECEIVER_OP)
+        response = self.sock.recv(HoneynetSocketUtil.BUF_SIZE)
 
-            if response == HoneynetSocketUtil.RET_SUCCESS:
-                self.logger.info("Connected as Receiver")
-                self.wait_for_message()
-            elif response == HoneynetSocketUtil.RET_FAIL:
-                self.sock.close()
-                self.is_connected = False
-                raise DenyReceiverException
-            else:
-                self.sock.close()
-                self.is_connected = False
-                raise UnknownResponseException
-        finally:
-            self.sock.close()
+        if response == HoneynetSocketUtil.RET_SUCCESS:
+            self.logger.info("Connected as Receiver")
+        elif response == HoneynetSocketUtil.RET_FAIL:
+            self.disconnect()
+            raise DenyReceiverException
+        else:
+            self.disconnect()
+            raise UnknownResponseException
+
+    def receive_message(self):
+        msg = self.sock.recv(HoneynetSocketUtil.BUF_SIZE)
+        return msg
 
     def wait_for_message(self):
         while self.is_connected:
-            response = self.sock.recv(HoneynetSocketUtil.BUF_SIZE)
+            response = self.receive_message()
             if response:
                 self.logger.debug("Received:%s", response)
 
@@ -133,9 +131,11 @@ def main(options):
     if options.type == "sender":
         client = SenderSocketClient((options.host, options.port))
         client.connect()
+        client.start_send_message()
     elif options.type == "receiver":
         client = ReceiverSocketClient((options.host, options.port))
         client.connect()
+        client.wait_for_message()
     else:
         return
 
@@ -145,3 +145,8 @@ if __name__ == '__main__':
         sys.exit(main(options))
     except KeyboardInterrupt:
         sys.exit(0)
+    except Exception as e:
+        print "Exception happened."
+        print e.message
+        sys.exit(1)
+

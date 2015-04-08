@@ -48,9 +48,8 @@ class HoneynetSocketServer(object):
                 # set threads as daemon, otherwise server will not stop at KeyboardInterrupt
                 handle_thread.setDaemon(True)
                 handle_thread.start()
-        except KeyboardInterrupt:
-            self.stop()
-            sys.exit(0)
+        except Exception as e:
+            self.logger.debug(e)
         finally:
             self.stop()
             sys.exit(0)
@@ -74,7 +73,10 @@ class HoneynetSocketServer(object):
                 if data:
                     self.logger.debug("From %s, Received:%s", client_addr, data)
                     for receiver_sock in self.receiver_socks:
-                        receiver_sock.sendall(data)
+                        try:
+                            receiver_sock.sendall(data)
+                        except:
+                            pass
 
         # if it is a receiver thread, simply add the socket to our receiver sockets set
         elif first_op == HoneynetSocketUtil.RECEIVER_OP:
@@ -102,8 +104,6 @@ def main(options):
     addr = (options.host, options.port)
     server = HoneynetSocketServer(addr)
     server.start()
-    while True:
-        pass
 
 if __name__ == '__main__':
     options = parse_args()
