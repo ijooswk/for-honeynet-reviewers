@@ -92,6 +92,7 @@ class TestHoneynetSocketServer(unittest.TestCase):
         """
         self.sender = DummyTCPClient(Config.SERVER_ADDR)
         self.receiver = DummyTCPClient(Config.SERVER_ADDR)
+        self.unknown_client = DummyTCPClient(Config.SERVER_ADDR)
 
         self.senders = []
         self.receivers = []
@@ -107,10 +108,13 @@ class TestHoneynetSocketServer(unittest.TestCase):
         :return:
         """
         # start a sender and a receiver, assert that the data sender sends is received by receiver
+        ret = self.unknown_client.connect_and_send("unknown op")
+        self.assertFalse(ret)
         ret = self.sender.connect_and_send(HoneynetSocketUtil.SENDER_OP)
         self.assertTrue(ret)
         ret = self.receiver.connect_and_send(HoneynetSocketUtil.RECEIVER_OP)
         self.assertTrue(ret)
+
         msg_sent = Config.MSG
         self.sender.sock.sendall(msg_sent)
         msg_received = self.receiver.sock.recv(Config.BUF_SIZE)

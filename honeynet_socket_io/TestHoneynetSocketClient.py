@@ -227,6 +227,17 @@ class TestReceiverClient(TestSocketClient):
         client.disconnect()
 
 
+class TestCommandLineParser(unittest.TestCase):
+    """
+    Test whether the parse_args function functions well
+    """
+    def test_parse_args(self):
+        """
+        pass string to parse_args function and
+        assert whether options are correctly parsed
+        """
+        cmd = ""
+
 if __name__ == '__main__':
     unittest.main()
 

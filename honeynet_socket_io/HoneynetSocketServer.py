@@ -102,6 +102,7 @@ class HoneynetSocketServer(object):
             client_sock.sendall(HoneynetSocketUtil.RET_SUCCESS)
         else:
             client_sock.sendall(HoneynetSocketUtil.RET_FAIL)
+            client_sock.close()
             raise UnknownRequestException
 
 
