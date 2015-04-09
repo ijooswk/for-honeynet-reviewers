@@ -1,7 +1,10 @@
+# Global variables and op codes used in
+# HoneynetSocketClient and HoneynetSocketServer
+
 __author__ = 'yuanchun'
 
 # the opcodes of sender client and receiver clients
-# clients should send opcode once after connection established to claim their type
+# clients should send op code once after connection established to claim their type
 SENDER_OP = "sender"
 RECEIVER_OP = "receiver"
 HEARTBEAT_OP = "heartbeat"
